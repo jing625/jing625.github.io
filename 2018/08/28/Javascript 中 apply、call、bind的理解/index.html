@@ -79,13 +79,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="###1.apply、call在 javascript 中，call 和 apply 都是为了改变某个函数运行时的上下文（context）而存在的，换句话说，就是为了改变函数体内部 this 的指向。JavaScript 的一大特点是，函数存在「定义时上下文」和「运行时上下文」以及「上下文是可以改变的」这样的概念。1234567891011function fruits() &amp;#123;&amp;#125">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript 中 apply、call、bind的理解">
+<meta property="og:url" content="http://yoursite.com/2018/08/28/Javascript 中 apply、call、bind的理解/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="###1.apply、call在 javascript 中，call 和 apply 都是为了改变某个函数运行时的上下文（context）而存在的，换句话说，就是为了改变函数体内部 this 的指向。JavaScript 的一大特点是，函数存在「定义时上下文」和「运行时上下文」以及「上下文是可以改变的」这样的概念。1234567891011function fruits() &amp;#123;&amp;#125">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-28T05:42:13.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Javascript 中 apply、call、bind的理解">
+<meta name="twitter:description" content="###1.apply、call在 javascript 中，call 和 apply 都是为了改变某个函数运行时的上下文（context）而存在的，换句话说，就是为了改变函数体内部 this 的指向。JavaScript 的一大特点是，函数存在「定义时上下文」和「运行时上下文」以及「上下文是可以改变的」这样的概念。1234567891011function fruits() &amp;#123;&amp;#125">
 
 
 
@@ -115,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/28/Javascript 中 apply、call、bind的理解/"/>
 
 
 
 
 
-  <title>Hexo</title>
+  <title>Javascript 中 apply、call、bind的理解 | Hexo</title>
   
 
 
@@ -140,8 +144,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -214,9 +217,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -246,9 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/28/Javascript 中 apply、call、bind的理解/" itemprop="url">Javascript 中 apply、call、bind的理解</a></h1>
+          <h1 class="post-title" itemprop="name headline">Javascript 中 apply、call、bind的理解</h1>
         
 
         <div class="post-meta">
@@ -298,9 +299,7 @@
       
 
       
-        
-          
-            <p>###1.apply、call<br>在 javascript 中，call 和 apply 都是为了改变某个函数运行时的上下文（context）而存在的，换句话说，就是为了改变函数体内部 this 的指向。<br>JavaScript 的一大特点是，函数存在「定义时上下文」和「运行时上下文」以及「上下文是可以改变的」这样的概念。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function fruits() &#123;&#125;</span><br><span class="line"> </span><br><span class="line">fruits.prototype = &#123;</span><br><span class="line">    color: &quot;red&quot;,</span><br><span class="line">    say: function() &#123;</span><br><span class="line">        console.log(&quot;My color is &quot; + this.color);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">var apple = new fruits;</span><br><span class="line">apple.say();    //My color is red</span><br></pre></td></tr></table></figure></p>
+        <p>###1.apply、call<br>在 javascript 中，call 和 apply 都是为了改变某个函数运行时的上下文（context）而存在的，换句话说，就是为了改变函数体内部 this 的指向。<br>JavaScript 的一大特点是，函数存在「定义时上下文」和「运行时上下文」以及「上下文是可以改变的」这样的概念。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function fruits() &#123;&#125;</span><br><span class="line"> </span><br><span class="line">fruits.prototype = &#123;</span><br><span class="line">    color: &quot;red&quot;,</span><br><span class="line">    say: function() &#123;</span><br><span class="line">        console.log(&quot;My color is &quot; + this.color);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">var apple = new fruits;</span><br><span class="line">apple.say();    //My color is red</span><br></pre></td></tr></table></figure></p>
 <p>但是如果我们有一个对象banana= {color : “yellow”} ,我们不想对它重新定义 say 方法，那么我们可以通过 call 或 apply 用 apple 的 say 方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">banana = &#123;</span><br><span class="line">    color: &quot;yellow&quot;</span><br><span class="line">&#125;</span><br><span class="line">apple.say.call(banana);     //My color is yellow</span><br><span class="line">apple.say.apply(banana);    //My color is yellow</span><br><span class="line"></span><br><span class="line">banana = &#123;</span><br><span class="line">    color: &quot;yellow&quot;</span><br><span class="line">&#125;</span><br><span class="line">apple.say.call(banana);     //My color is yellow</span><br><span class="line">apple.say.apply(banana);    //My color is yellow</span><br></pre></td></tr></table></figure></p>
 <p>所以，可以看出 call 和 apply 是为了动态改变 this 而出现的，当一个 object 没有某个方法（本栗子中banana没有say方法），但是其他的有（本栗子中apple有say方法），我们可以借助call或apply用其它对象的方法来操作。</p>
 <p>###2.apply、call 的区别<br>对于 apply、call 二者而言，作用完全一样，只是接受参数的方式不太一样。例如，有一个函数定义如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var func = function(arg1, arg2) &#123;</span><br><span class="line"> </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
@@ -369,8 +368,6 @@
 </ul>
 <p>例子中的写法等同于[‘a’,’b’,’c’].join(‘-‘)</p>
 
-          
-        
       
     </div>
     
@@ -387,12 +384,12 @@
       
 
       
+      
+      
 
       
 
       
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -402,10 +399,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -413,6 +411,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -609,6 +611,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
