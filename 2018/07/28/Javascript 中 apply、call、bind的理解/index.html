@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="1.apply、call,2.apply、call 的区别 - 1. 数组之间追加 - 2. 获取数组中的最大值和最小值 - 3. 验证是否是数组（前提是toString()方法没有被重写过） - 4. 类（伪）数组使用数组方法,3.深入理解运用apply、call,4.bind,5.apply、call、bind比较 - 1. bind、call和apply方法的相同之处 - 2. bind方法的用法上的区别 - 3. bind方法常见的应用写法," />
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="梁光静">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="1.apply、call在 javascript 中，call 和 apply 都是为了改变某个函数运行时的上下文（context）而存在的，换句话说，就是为了改变函数体内部 this 的指向。JavaScript 的一大特点是，函数存在「定义时上下文」和「运行时上下文」以及「上下文是可以改变的」这样的概念。1234567891011function fruits() &amp;#123;&amp;#125; f">
+<meta name="keywords" content="1.apply、call,2.apply、call 的区别 - 1. 数组之间追加 - 2. 获取数组中的最大值和最小值 - 3. 验证是否是数组（前提是toString()方法没有被重写过） - 4. 类（伪）数组使用数组方法,3.深入理解运用apply、call,4.bind,5.apply、call、bind比较 - 1. bind、call和apply方法的相同之处 - 2. bind方法的用法上的区别 - 3. bind方法常见的应用写法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript 中 apply、call、bind的理解">
+<meta property="og:url" content="http://yoursite.com/2018/07/28/Javascript 中 apply、call、bind的理解/index.html">
 <meta property="og:site_name" content="梁光静">
+<meta property="og:description" content="1.apply、call在 javascript 中，call 和 apply 都是为了改变某个函数运行时的上下文（context）而存在的，换句话说，就是为了改变函数体内部 this 的指向。JavaScript 的一大特点是，函数存在「定义时上下文」和「运行时上下文」以及「上下文是可以改变的」这样的概念。1234567891011function fruits() &amp;#123;&amp;#125; f">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-31T02:32:25.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="梁光静">
+<meta name="twitter:title" content="Javascript 中 apply、call、bind的理解">
+<meta name="twitter:description" content="1.apply、call在 javascript 中，call 和 apply 都是为了改变某个函数运行时的上下文（context）而存在的，换句话说，就是为了改变函数体内部 this 的指向。JavaScript 的一大特点是，函数存在「定义时上下文」和「运行时上下文」以及「上下文是可以改变的」这样的概念。1234567891011function fruits() &amp;#123;&amp;#125; f">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/28/Javascript 中 apply、call、bind的理解/"/>
 
 
 
 
 
-  <title>梁光静</title>
+  <title>Javascript 中 apply、call、bind的理解 | 梁光静</title>
   
 
 
@@ -140,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -214,291 +218,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/14/自己封装AJAX/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="梁光静">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="梁光静">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/14/自己封装AJAX/" itemprop="url">自己封装AJAX</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-14T23:35:30+08:00">
-                2018-08-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li><p>用原生 JS 写出一个 AJAX 请求</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">let request = new XMLHttpRequest()</span><br><span class="line">request.open(&apos;get&apos;, &apos;/xxx&apos;) // 配置request</span><br><span class="line">request.send()</span><br><span class="line">request.onreadystatechange = ()=&gt;&#123;</span><br><span class="line">  if(request.readyState === 4)&#123; </span><br><span class="line">    if(request.status &gt;= 200 &amp;&amp; request.status &lt; 300)&#123;</span><br><span class="line">      console.log(&apos;说明请求成功&apos;)</span><br><span class="line">    &#125;else if(request.status &gt;= 400)&#123;</span><br><span class="line">      console.log(&apos;说明请求失败&apos;) </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>自己封装一个封装一个 jQuery.ajax</p>
-</li>
-</ol>
-<p>jQuery.ajax(url,method,body,success, fail)</p>
-<p>满足这种 API。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">window.jQuery = function(nodeOrSelector)&#123;</span><br><span class="line">  let nodes = &#123;&#125;</span><br><span class="line">  nodes.addClass = function()&#123;&#125;</span><br><span class="line">  nodes.html = function()&#123;&#125;</span><br><span class="line">  return nodes</span><br><span class="line">&#125;</span><br><span class="line">window.$ = window.jQuery</span><br><span class="line"></span><br><span class="line">window.jQuery.ajax = function(&#123;url, method, body, successFn, failFn, headers&#125;)&#123;</span><br><span class="line">  let request = new XMLHttpRequest()</span><br><span class="line">  request.open(method, url) // 配置request</span><br><span class="line">  for(let key in headers) &#123;</span><br><span class="line">    let value = headers[key]</span><br><span class="line">    request.setRequestHeader(key, value)</span><br><span class="line">  &#125;</span><br><span class="line">  request.onreadystatechange = ()=&gt;&#123;</span><br><span class="line">    if(request.readyState === 4)&#123;</span><br><span class="line">      if(request.status &gt;= 200 &amp;&amp; request.status &lt; 300)&#123;</span><br><span class="line">        successFn.call(undefined, request.responseText)</span><br><span class="line">      &#125;else if(request.status &gt;= 400)&#123;</span><br><span class="line">        failFn.call(undefined, request)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  request.send(body)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function f1(responseText)&#123;&#125;</span><br><span class="line">function f2(responseText)&#123;&#125;</span><br><span class="line"></span><br><span class="line">myButton.addEventListener(&apos;click&apos;, (e)=&gt;&#123;</span><br><span class="line">  window.jQuery.ajax(&#123;</span><br><span class="line">    url: &apos;/frank&apos;,</span><br><span class="line">    method: &apos;get&apos;,</span><br><span class="line">    headers: &#123;</span><br><span class="line">      &apos;content-type&apos;:&apos;application/x-www-form-urlencoded&apos;,</span><br><span class="line">      &apos;frank&apos;: &apos;18&apos;</span><br><span class="line">    &#125;,</span><br><span class="line">    successFn: (x)=&gt;&#123;</span><br><span class="line">      f1.call(undefined,x)</span><br><span class="line">      f2.call(undefined,x)</span><br><span class="line">    &#125;,</span><br><span class="line">    failFn: (x)=&gt;&#123;</span><br><span class="line">      console.log(x)</span><br><span class="line">      console.log(x.status)</span><br><span class="line">      console.log(x.responseText)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<ol start="3">
-<li>升级刚刚的 jQuery.ajax 满足 Promise 规则<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">window.jQuery = function(nodeOrSelector)&#123;</span><br><span class="line">  let nodes = &#123;&#125;</span><br><span class="line">  nodes.addClass = function()&#123;&#125;</span><br><span class="line">  nodes.html = function()&#123;&#125;</span><br><span class="line">  return nodes</span><br><span class="line">&#125;</span><br><span class="line">window.$ = window.jQuery</span><br><span class="line"></span><br><span class="line">window.Promise = function(fn)&#123;</span><br><span class="line">  // ...</span><br><span class="line">  return &#123;</span><br><span class="line">    then: function()&#123;&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">window.jQuery.ajax = function(&#123;url, method, body, headers&#125;)&#123;</span><br><span class="line">  return new Promise(function(resolve, reject)&#123;</span><br><span class="line">    let request = new XMLHttpRequest()</span><br><span class="line">    request.open(method, url) // 配置request</span><br><span class="line">    for(let key in headers) &#123;</span><br><span class="line">      let value = headers[key]</span><br><span class="line">      request.setRequestHeader(key, value)</span><br><span class="line">    &#125;</span><br><span class="line">    request.onreadystatechange = ()=&gt;&#123;</span><br><span class="line">      if(request.readyState === 4)&#123;</span><br><span class="line">        if(request.status &gt;= 200 &amp;&amp; request.status &lt; 300)&#123;</span><br><span class="line">          resolve.call(undefined, request.responseText)</span><br><span class="line">        &#125;else if(request.status &gt;= 400)&#123;</span><br><span class="line">          reject.call(undefined, request)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    request.send(body)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">myButton.addEventListener(&apos;click&apos;, (e)=&gt;&#123;</span><br><span class="line">  let promise = window.jQuery.ajax(&#123;</span><br><span class="line">    url: &apos;/xxx&apos;,</span><br><span class="line">    method: &apos;get&apos;,</span><br><span class="line">    headers: &#123;</span><br><span class="line">      &apos;content-type&apos;:&apos;application/x-www-form-urlencoded&apos;,</span><br><span class="line">      &apos;frank&apos;: &apos;18&apos;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  promise.then(</span><br><span class="line">    (text)=&gt;&#123;console.log(text)&#125;,</span><br><span class="line">    (request)=&gt;&#123;console.log(request)&#125;</span><br><span class="line">  )</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/04/理解jQuery的实现过程/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="梁光静">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="梁光静">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/04/理解jQuery的实现过程/" itemprop="url">理解jQuery的实现过程</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-04T15:22:16+08:00">
-                2018-08-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="自己封装jQuery函数的一个例子"><a href="#自己封装jQuery函数的一个例子" class="headerlink" title="自己封装jQuery函数的一个例子"></a>自己封装jQuery函数的一个例子</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">window.jQuery = ???</span><br><span class="line">window.$ = jQuery</span><br><span class="line"></span><br><span class="line">var $div = $(&apos;div&apos;)</span><br><span class="line">$div.addClass(&apos;red&apos;) // 可将所有 div 的 class 添加一个 red</span><br><span class="line">$div.setText(&apos;hi&apos;) // 可将所有 div 的 textContent 变为 hi</span><br><span class="line"></span><br><span class="line"> &lt;-*************-&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">window.jQuery = function (x) &#123;</span><br><span class="line">            let nodes = &#123;&#125;                                  //选出div并转为伪数组</span><br><span class="line">            let temp = document.querySelectorAll(x)</span><br><span class="line">            for (let i = 0; i &lt; temp.length; i++) &#123;</span><br><span class="line">                nodes[i] = temp[i]</span><br><span class="line">                nodes.length = temp.length</span><br><span class="line">            &#125;                                </span><br><span class="line"></span><br><span class="line">            nodes.addClass = function (y) &#123;                //函数实现遍历div加上class的功能</span><br><span class="line">                for (let i = 0; i &lt; nodes.length; i++) &#123;</span><br><span class="line">                    nodes[i].classList.add(y)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;                              </span><br><span class="line"></span><br><span class="line">            nodes.setText = function (text) &#123;              //函数实现遍历div加上innerText的功能</span><br><span class="line">                for (let i = 0; i &lt; nodes.length; i++) &#123;</span><br><span class="line">                    nodes[i].innerText = text</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            return nodes</span><br><span class="line">        &#125;</span><br><span class="line"> window.$ = jQuery</span><br><span class="line"> var $div = $(&apos;div&apos;)</span><br><span class="line"> $div.addClass(&apos;red&apos;)</span><br><span class="line"> $div.setText(&apos;hi&apos;)</span><br></pre></td></tr></table></figure>
-<h3 id="代码实现过程"><a href="#代码实现过程" class="headerlink" title="代码实现过程"></a>代码实现过程</h3> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.jQuery = function(nodeOrSelector)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>一般我们的得到的元素都是一个dom对象，而这个对象最终继承的就是Node接口</li>
-<li>所以可以在 Node.prototype 上添加以上 addClass 及setText 方法</li>
-<li>但是Node.prototype 是一个共有对象，每个人写的程序都不一样， 如果大家都在这里面操作添加删除API , 就会出现各种问题</li>
-<li>所以我们可以取一个我们自己喜欢的名字来当作我们简便操作dom树，这个构造函数就不会被别人乱修改啦，而jQuery的作者就取名叫jQuery的</li>
-<li><p>为了更懒更简便的操作，所以让$ = jQuery</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">let nodes = &#123;&#125;</span><br><span class="line">  if (typeof nodeOrSelector === &apos;string&apos;) &#123;</span><br><span class="line">    let tmp = document.querySelectorAll(nodeOrSelector);</span><br><span class="line">    for(var i =0; i &lt; tmp.length; i++)&#123;</span><br><span class="line">      nodes[i] = tmp[i];</span><br><span class="line">    &#125;</span><br><span class="line">    nodes.length = i;</span><br><span class="line">  &#125; else if (nodeOrSelector instanceof Node) &#123;</span><br><span class="line">    nodes = &#123;</span><br><span class="line">      0: nodeOrSelector,</span><br><span class="line">      length: 1</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>因为jQuery 传入的有可能是字符串形式的选择器 或者 节点元素，所以 这段代码实现的功能是</p>
-</li>
-<li>先创建一个对象</li>
-</ul>
-<ul>
-<li>判断传入的参数是字符串还是dom对象</li>
-<li>如果是字符串就document.querySelectorAll匹配所有符合的选择器的元素，然后改成jQuery形式的对象，也就是我们开始创建的对象，不能直接复制给这个对象，因为匹配得到的对象是NodeList对象，是dom类型对象</li>
-<li>如果是节点元素就直接添加进第一项就好了</li>
-<li><p>因为jQuery ,$div[0] === div</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">nodes.addClass = function(classs) &#123;</span><br><span class="line">    for (let i = 0; i &lt; nodes.length; i++) &#123;</span><br><span class="line">      nodes[i].classList.add(classs);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  nodes.setText = function(text)&#123;</span><br><span class="line">    for (let i = 0; i &lt; nodes.length; i++) &#123;</span><br><span class="line">        nodes[i].textContent = text;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return nodes;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>最后就是给这个要返回的对象添加API啦</p>
-</li>
-<li>真正的jQuery的API都是封装在jQuery.prototype中，所有的jQuery对象都共用这些API</li>
-<li><p>这里的nodes就与两个方法之间产生了闭包， 保护了nodes的私有化</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">window.$ = jQuery</span><br><span class="line"></span><br><span class="line">var $div = $(&apos;div&apos;)</span><br><span class="line">$div.addClass(&apos;red&apos;) // 可将所有 div 的 class 添加一个 red</span><br><span class="line">$div.setText(&apos;222&apos;) // 可将所有 div 的 textContent 变为 hi</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>为了更方便的操作 用<code>$</code>代替jQuery ，<code>var $div = $(&#39;div&#39;)</code> 可以 <code>var $div = jQuery(&#39;div&#39;)</code> 也是一样的</p>
-</li>
-<li>构造函数返回的对象就包含了两个方法， 我们就可以直接调用啦。</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -528,9 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/28/Javascript 中 apply、call、bind的理解/" itemprop="url">Javascript 中 apply、call、bind的理解</a></h1>
+          <h1 class="post-title" itemprop="name headline">Javascript 中 apply、call、bind的理解</h1>
         
 
         <div class="post-meta">
@@ -580,9 +300,7 @@
       
 
       
-        
-          
-            <h3 id="1-apply、call"><a href="#1-apply、call" class="headerlink" title="1.apply、call"></a>1.apply、call</h3><p>在 javascript 中，call 和 apply 都是为了改变某个函数运行时的上下文（context）而存在的，换句话说，就是为了改变函数体内部 this 的指向。<br>JavaScript 的一大特点是，函数存在「定义时上下文」和「运行时上下文」以及「上下文是可以改变的」这样的概念。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function fruits() &#123;&#125;</span><br><span class="line"> </span><br><span class="line">fruits.prototype = &#123;</span><br><span class="line">    color: &quot;red&quot;,</span><br><span class="line">    say: function() &#123;</span><br><span class="line">        console.log(&quot;My color is &quot; + this.color);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">var apple = new fruits;</span><br><span class="line">apple.say();    //My color is red</span><br></pre></td></tr></table></figure></p>
+        <h3 id="1-apply、call"><a href="#1-apply、call" class="headerlink" title="1.apply、call"></a>1.apply、call</h3><p>在 javascript 中，call 和 apply 都是为了改变某个函数运行时的上下文（context）而存在的，换句话说，就是为了改变函数体内部 this 的指向。<br>JavaScript 的一大特点是，函数存在「定义时上下文」和「运行时上下文」以及「上下文是可以改变的」这样的概念。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function fruits() &#123;&#125;</span><br><span class="line"> </span><br><span class="line">fruits.prototype = &#123;</span><br><span class="line">    color: &quot;red&quot;,</span><br><span class="line">    say: function() &#123;</span><br><span class="line">        console.log(&quot;My color is &quot; + this.color);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">var apple = new fruits;</span><br><span class="line">apple.say();    //My color is red</span><br></pre></td></tr></table></figure></p>
 <p>但是如果我们有一个对象banana= {color : “yellow”} ,我们不想对它重新定义 say 方法，那么我们可以通过 call 或 apply 用 apple 的 say 方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">banana = &#123;</span><br><span class="line">    color: &quot;yellow&quot;</span><br><span class="line">&#125;</span><br><span class="line">apple.say.call(banana);     //My color is yellow</span><br><span class="line">apple.say.apply(banana);    //My color is yellow</span><br><span class="line"></span><br><span class="line">banana = &#123;</span><br><span class="line">    color: &quot;yellow&quot;</span><br><span class="line">&#125;</span><br><span class="line">apple.say.call(banana);     //My color is yellow</span><br><span class="line">apple.say.apply(banana);    //My color is yellow</span><br></pre></td></tr></table></figure></p>
 <p>所以，可以看出 call 和 apply 是为了动态改变 this 而出现的，当一个 object 没有某个方法（本栗子中banana没有say方法），但是其他的有（本栗子中apple有say方法），我们可以借助call或apply用其它对象的方法来操作。</p>
 <h3 id="2-apply、call-的区别"><a href="#2-apply、call-的区别" class="headerlink" title="2.apply、call 的区别"></a>2.apply、call 的区别</h3><p>对于 apply、call 二者而言，作用完全一样，只是接受参数的方式不太一样。例如，有一个函数定义如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var func = function(arg1, arg2) &#123;</span><br><span class="line"> </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
@@ -650,8 +368,6 @@
 </ul>
 <p>例子中的写法等同于[‘a’,’b’,’c’].join(‘-‘)</p>
 
-          
-        
       
     </div>
     
@@ -666,14 +382,44 @@
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/1-apply、call/" rel="tag"># 1.apply、call</a>
+          
+            <a href="/tags/2-apply、call-的区别-1-数组之间追加-2-获取数组中的最大值和最小值-3-验证是否是数组（前提是toString-方法没有被重写过）-4-类（伪）数组使用数组方法/" rel="tag"># 2.apply、call 的区别 - 1. 数组之间追加 - 2. 获取数组中的最大值和最小值 - 3. 验证是否是数组（前提是toString()方法没有被重写过） - 4. 类（伪）数组使用数组方法</a>
+          
+            <a href="/tags/3-深入理解运用apply、call/" rel="tag"># 3.深入理解运用apply、call</a>
+          
+            <a href="/tags/4-bind/" rel="tag"># 4.bind</a>
+          
+            <a href="/tags/5-apply、call、bind比较-1-bind、call和apply方法的相同之处-2-bind方法的用法上的区别-3-bind方法常见的应用写法/" rel="tag"># 5.apply、call、bind比较 - 1. bind、call和apply方法的相同之处 - 2. bind方法的用法上的区别 - 3. bind方法常见的应用写法</a>
+          
+        </div>
       
 
       
+      
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/04/理解jQuery的实现过程/" rel="prev" title="理解jQuery的实现过程">
+                理解jQuery的实现过程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </div>
@@ -683,10 +429,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -694,6 +441,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -714,8 +465,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -766,6 +526,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-apply、call"><span class="nav-number">1.</span> <span class="nav-text">1.apply、call</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-apply、call-的区别"><span class="nav-number">2.</span> <span class="nav-text">2.apply、call 的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-深入理解运用apply、call"><span class="nav-number">3.</span> <span class="nav-text">3.深入理解运用apply、call</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-bind"><span class="nav-number">4.</span> <span class="nav-text">4.bind</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-apply、call、bind比较"><span class="nav-number">5.</span> <span class="nav-text">5.apply、call、bind比较</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -899,6 +675,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
