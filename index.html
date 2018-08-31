@@ -361,156 +361,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/28/理解jQuery的实现过程/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="梁光静">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="梁光静">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/28/理解jQuery的实现过程/" itemprop="url">理解jQuery的实现过程</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-28T15:22:16+08:00">
-                2018-08-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>###自己封装jQuery函数的一个例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">window.jQuery = ???</span><br><span class="line">window.$ = jQuery</span><br><span class="line"></span><br><span class="line">var $div = $(&apos;div&apos;)</span><br><span class="line">$div.addClass(&apos;red&apos;) // 可将所有 div 的 class 添加一个 red</span><br><span class="line">$div.setText(&apos;hi&apos;) // 可将所有 div 的 textContent 变为 hi</span><br><span class="line"></span><br><span class="line"> &lt;-*************-&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">window.jQuery = function (x) &#123;</span><br><span class="line">            let nodes = &#123;&#125;                                  //选出div并转为伪数组</span><br><span class="line">            let temp = document.querySelectorAll(x)</span><br><span class="line">            for (let i = 0; i &lt; temp.length; i++) &#123;</span><br><span class="line">                nodes[i] = temp[i]</span><br><span class="line">                nodes.length = temp.length</span><br><span class="line">            &#125;                                </span><br><span class="line"></span><br><span class="line">            nodes.addClass = function (y) &#123;                //函数实现遍历div加上class的功能</span><br><span class="line">                for (let i = 0; i &lt; nodes.length; i++) &#123;</span><br><span class="line">                    nodes[i].classList.add(y)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;                              </span><br><span class="line"></span><br><span class="line">            nodes.setText = function (text) &#123;              //函数实现遍历div加上innerText的功能</span><br><span class="line">                for (let i = 0; i &lt; nodes.length; i++) &#123;</span><br><span class="line">                    nodes[i].innerText = text</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            return nodes</span><br><span class="line">        &#125;</span><br><span class="line"> window.$ = jQuery</span><br><span class="line"> var $div = $(&apos;div&apos;)</span><br><span class="line"> $div.addClass(&apos;red&apos;)</span><br><span class="line"> $div.setText(&apos;hi&apos;)</span><br></pre></td></tr></table></figure></p>
-<p> ###代码实现过程<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.jQuery = function(nodeOrSelector)</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>一般我们的得到的元素都是一个dom对象，而这个对象最终继承的就是Node接口</li>
-<li>所以可以在 Node.prototype 上添加以上 addClass 及setText 方法</li>
-<li>但是Node.prototype 是一个共有对象，每个人写的程序都不一样， 如果大家都在这里面操作添加删除API , 就会出现各种问题</li>
-<li>所以我们可以取一个我们自己喜欢的名字来当作我们简便操作dom树，这个构造函数就不会被别人乱修改啦，而jQuery的作者就取名叫jQuery的</li>
-<li><p>为了更懒更简便的操作，所以让$ = jQuery</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">let nodes = &#123;&#125;</span><br><span class="line">  if (typeof nodeOrSelector === &apos;string&apos;) &#123;</span><br><span class="line">    let tmp = document.querySelectorAll(nodeOrSelector);</span><br><span class="line">    for(var i =0; i &lt; tmp.length; i++)&#123;</span><br><span class="line">      nodes[i] = tmp[i];</span><br><span class="line">    &#125;</span><br><span class="line">    nodes.length = i;</span><br><span class="line">  &#125; else if (nodeOrSelector instanceof Node) &#123;</span><br><span class="line">    nodes = &#123;</span><br><span class="line">      0: nodeOrSelector,</span><br><span class="line">      length: 1</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>因为jQuery 传入的有可能是字符串形式的选择器 或者 节点元素，所以 这段代码实现的功能是</p>
-</li>
-<li>先创建一个对象</li>
-</ul>
-<ul>
-<li>判断传入的参数是字符串还是dom对象</li>
-<li>如果是字符串就document.querySelectorAll匹配所有符合的选择器的元素，然后改成jQuery形式的对象，也就是我们开始创建的对象，不能直接复制给这个对象，因为匹配得到的对象是NodeList对象，是dom类型对象</li>
-<li>如果是节点元素就直接添加进第一项就好了</li>
-<li><p>因为jQuery ,$div[0] === div</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">nodes.addClass = function(classs) &#123;</span><br><span class="line">    for (let i = 0; i &lt; nodes.length; i++) &#123;</span><br><span class="line">      nodes[i].classList.add(classs);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  nodes.setText = function(text)&#123;</span><br><span class="line">    for (let i = 0; i &lt; nodes.length; i++) &#123;</span><br><span class="line">        nodes[i].textContent = text;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return nodes;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>最后就是给这个要返回的对象添加API啦</p>
-</li>
-<li>真正的jQuery的API都是封装在jQuery.prototype中，所有的jQuery对象都共用这些API</li>
-<li><p>这里的nodes就与两个方法之间产生了闭包， 保护了nodes的私有化</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">window.$ = jQuery</span><br><span class="line"></span><br><span class="line">var $div = $(&apos;div&apos;)</span><br><span class="line">$div.addClass(&apos;red&apos;) // 可将所有 div 的 class 添加一个 red</span><br><span class="line">$div.setText(&apos;222&apos;) // 可将所有 div 的 textContent 变为 hi</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>为了更方便的操作 用<code>$</code>代替jQuery ，<code>var $div = $(&#39;div&#39;)</code> 可以 <code>var $div = jQuery(&#39;div&#39;)</code> 也是一样的</p>
-</li>
-<li>构造函数返回的对象就包含了两个方法， 我们就可以直接调用啦。</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/28/Javascript 中 apply、call、bind的理解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -685,6 +535,156 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/24/理解jQuery的实现过程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="梁光静">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="梁光静">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/24/理解jQuery的实现过程/" itemprop="url">理解jQuery的实现过程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-24T15:22:16+08:00">
+                2018-08-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="自己封装jQuery函数的一个例子"><a href="#自己封装jQuery函数的一个例子" class="headerlink" title="自己封装jQuery函数的一个例子"></a>自己封装jQuery函数的一个例子</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">window.jQuery = ???</span><br><span class="line">window.$ = jQuery</span><br><span class="line"></span><br><span class="line">var $div = $(&apos;div&apos;)</span><br><span class="line">$div.addClass(&apos;red&apos;) // 可将所有 div 的 class 添加一个 red</span><br><span class="line">$div.setText(&apos;hi&apos;) // 可将所有 div 的 textContent 变为 hi</span><br><span class="line"></span><br><span class="line"> &lt;-*************-&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">window.jQuery = function (x) &#123;</span><br><span class="line">            let nodes = &#123;&#125;                                  //选出div并转为伪数组</span><br><span class="line">            let temp = document.querySelectorAll(x)</span><br><span class="line">            for (let i = 0; i &lt; temp.length; i++) &#123;</span><br><span class="line">                nodes[i] = temp[i]</span><br><span class="line">                nodes.length = temp.length</span><br><span class="line">            &#125;                                </span><br><span class="line"></span><br><span class="line">            nodes.addClass = function (y) &#123;                //函数实现遍历div加上class的功能</span><br><span class="line">                for (let i = 0; i &lt; nodes.length; i++) &#123;</span><br><span class="line">                    nodes[i].classList.add(y)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;                              </span><br><span class="line"></span><br><span class="line">            nodes.setText = function (text) &#123;              //函数实现遍历div加上innerText的功能</span><br><span class="line">                for (let i = 0; i &lt; nodes.length; i++) &#123;</span><br><span class="line">                    nodes[i].innerText = text</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            return nodes</span><br><span class="line">        &#125;</span><br><span class="line"> window.$ = jQuery</span><br><span class="line"> var $div = $(&apos;div&apos;)</span><br><span class="line"> $div.addClass(&apos;red&apos;)</span><br><span class="line"> $div.setText(&apos;hi&apos;)</span><br></pre></td></tr></table></figure>
+<h3 id="代码实现过程"><a href="#代码实现过程" class="headerlink" title="代码实现过程"></a>代码实现过程</h3> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.jQuery = function(nodeOrSelector)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>一般我们的得到的元素都是一个dom对象，而这个对象最终继承的就是Node接口</li>
+<li>所以可以在 Node.prototype 上添加以上 addClass 及setText 方法</li>
+<li>但是Node.prototype 是一个共有对象，每个人写的程序都不一样， 如果大家都在这里面操作添加删除API , 就会出现各种问题</li>
+<li>所以我们可以取一个我们自己喜欢的名字来当作我们简便操作dom树，这个构造函数就不会被别人乱修改啦，而jQuery的作者就取名叫jQuery的</li>
+<li><p>为了更懒更简便的操作，所以让$ = jQuery</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">let nodes = &#123;&#125;</span><br><span class="line">  if (typeof nodeOrSelector === &apos;string&apos;) &#123;</span><br><span class="line">    let tmp = document.querySelectorAll(nodeOrSelector);</span><br><span class="line">    for(var i =0; i &lt; tmp.length; i++)&#123;</span><br><span class="line">      nodes[i] = tmp[i];</span><br><span class="line">    &#125;</span><br><span class="line">    nodes.length = i;</span><br><span class="line">  &#125; else if (nodeOrSelector instanceof Node) &#123;</span><br><span class="line">    nodes = &#123;</span><br><span class="line">      0: nodeOrSelector,</span><br><span class="line">      length: 1</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>因为jQuery 传入的有可能是字符串形式的选择器 或者 节点元素，所以 这段代码实现的功能是</p>
+</li>
+<li>先创建一个对象</li>
+</ul>
+<ul>
+<li>判断传入的参数是字符串还是dom对象</li>
+<li>如果是字符串就document.querySelectorAll匹配所有符合的选择器的元素，然后改成jQuery形式的对象，也就是我们开始创建的对象，不能直接复制给这个对象，因为匹配得到的对象是NodeList对象，是dom类型对象</li>
+<li>如果是节点元素就直接添加进第一项就好了</li>
+<li><p>因为jQuery ,$div[0] === div</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">nodes.addClass = function(classs) &#123;</span><br><span class="line">    for (let i = 0; i &lt; nodes.length; i++) &#123;</span><br><span class="line">      nodes[i].classList.add(classs);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  nodes.setText = function(text)&#123;</span><br><span class="line">    for (let i = 0; i &lt; nodes.length; i++) &#123;</span><br><span class="line">        nodes[i].textContent = text;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return nodes;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>最后就是给这个要返回的对象添加API啦</p>
+</li>
+<li>真正的jQuery的API都是封装在jQuery.prototype中，所有的jQuery对象都共用这些API</li>
+<li><p>这里的nodes就与两个方法之间产生了闭包， 保护了nodes的私有化</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">window.$ = jQuery</span><br><span class="line"></span><br><span class="line">var $div = $(&apos;div&apos;)</span><br><span class="line">$div.addClass(&apos;red&apos;) // 可将所有 div 的 class 添加一个 red</span><br><span class="line">$div.setText(&apos;222&apos;) // 可将所有 div 的 textContent 变为 hi</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>为了更方便的操作 用<code>$</code>代替jQuery ，<code>var $div = $(&#39;div&#39;)</code> 可以 <code>var $div = jQuery(&#39;div&#39;)</code> 也是一样的</p>
+</li>
+<li>构造函数返回的对象就包含了两个方法， 我们就可以直接调用啦。</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -739,6 +739,15 @@
 
             
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
             
 
           </nav>
