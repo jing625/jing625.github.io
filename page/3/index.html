@@ -229,6 +229,177 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/17/HTML-语义化/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="梁光静">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="梁光静">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/17/HTML-语义化/" itemprop="url">HTML语义化</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-17T15:20:07+08:00">
+                2018-07-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="HTML-语义化-iframe-a-form的使用"><a href="#HTML-语义化-iframe-a-form的使用" class="headerlink" title="HTML-语义化-(iframe-a-form的使用)"></a>HTML-语义化-(iframe-a-form的使用)</h1><h2 id="语义化"><a href="#语义化" class="headerlink" title="语义化"></a>语义化</h2><p>参考资料：<br><a href="http://justineo.github.io/slideshows/semantic-html/" target="_blank" rel="noopener">semantic-html</a><br><a href="http://www.oschina.net/translate/about-html-semantics-front-end-architecture" target="_blank" rel="noopener">关于语义化 HTML 以及前端架构的一点思考</a><br><a href="http://www.zhihu.com/question/20455165" target="_blank" rel="noopener">如何理解 web 语义化</a></p>
+<blockquote>
+<p>语义化的含义就是用正确的标签做正确的事情，html语义化就是让页面的内容结构化，便于对浏览器、搜索引擎解析；在没有样式CCS情况下也以一种文档格式显示，并且是容易阅读的。搜索引擎的爬虫依赖于标记来确定上下文和各个关键字的权重，利于 SEO。使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。</p>
+</blockquote>
+<p>列举几个常见的标签：<br>标题从大到小： h1 , h2 , h3 , h4 , h5 , h6<br>超链接： a<br>段落： p<br>无序列表： ul&gt;li<br>有序列表： ol&gt;li<br>自定义列表： dl&gt;{dt , dd}<br><a href="http://www.runoob.com/tags/tag-header.html" target="_blank" rel="noopener"><code>&lt;header&gt;</code></a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/main" target="_blank" rel="noopener"><code>&lt;main&gt;</code></a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/section" target="_blank" rel="noopener"><code>&lt;section&gt;</code></a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/footer" target="_blank" rel="noopener"><code>&lt;footer&gt;</code></a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/article" target="_blank" rel="noopener"><code>&lt;article&gt;</code></a></p>
+<h2 id="a标签"><a href="#a标签" class="headerlink" title="a标签"></a>a标签</h2><h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>跳转页面。 发起 HTTP GET 请求</p>
+<h3 id="target-属性"><a href="#target-属性" class="headerlink" title="target 属性"></a>target 属性</h3><ul>
+<li>_blank 在新页面打开网页</li>
+<li>_self 在当前页面打开网页  </li>
+<li>_parent 在父页面打开网页  ， 这种要在当前页面被嵌套在一个iframe网页中容易体现出来</li>
+<li>_top 在最外围页面打开网页 ， 这种要在当前页面被嵌套在多个iframe网页中容易体现出来</li>
+</ul>
+<h3 id="download"><a href="#download" class="headerlink" title="download"></a>download</h3><ul>
+<li>表示下载href所对应的网页</li>
+</ul>
+<h2 id="iframe标签"><a href="#iframe标签" class="headerlink" title="iframe标签"></a>iframe标签</h2><p>默认宽高为300 * 150大小</p>
+<h3 id="作用-1"><a href="#作用-1" class="headerlink" title="作用"></a>作用</h3><ul>
+<li>可以在一个网页嵌套一个网页<br>例如：<br><img src="http://ww1.sinaimg.cn/large/006WOZytgy1fpg8heal7qj309508sdfv.jpg" alt=""></li>
+</ul>
+<h3 id="与-a标签"><a href="#与-a标签" class="headerlink" title="与 a标签"></a>与 a标签</h3><p>看图：<br><img src="http://ww1.sinaimg.cn/large/006WOZytgy1fpgqn7mfjuj309i084gm1.jpg" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe name=xxx src=&quot;http://baidu.com&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</span><br><span class="line">    &lt;a href=&quot;http://qq.com&quot; target=&quot;xxx&quot;&gt;QQ&lt;/a&gt;</span><br><span class="line">    &lt;p&gt;我是iframe外面的P标签&lt;/p&gt;</span><br></pre></td></tr></table></figure></p>
+<p>QQ为 a 标签链接  ，它的target 属性等于 <code>xxx</code>,点击QQ 就会在iframe 中打开<code>qq.com</code>的网页<br>iframe 标签中本来打开的网页时<code>baidu.com</code> ，iframe 有一个属性时<code>name</code> ，<code>name</code>属性等于 a标签的target属性的值，所以点击a标签的时候就会在iframe中打开a标签中的URL。</p>
+<h2 id="form标签"><a href="#form标签" class="headerlink" title="form标签"></a>form标签</h2><p>跳转页面。 发起 HTTP POST 请求<br>常用属性</p>
+<ul>
+<li>action ：  规定当提交表单时向何处发送表单数据。值为：URL</li>
+<li>method ：  规定用于发送表单数据的 HTTP 方法。值只能是： GET 或 POST请求</li>
+<li>target ：  规定在何处打开 action URL。值为：<br>i. _blank<br>ii. _self<br>iii. _parent<br>iv. _top<br>和 标签是一样的。  </li>
+<li><code>&lt;form&gt;</code> 元素包含一个或多个如下的表单元素：   <code>&lt;input&gt;
+&lt;textarea&gt;
+&lt;button&gt;
+&lt;select&gt;
+&lt;option&gt;
+&lt;optgroup&gt;
+&lt;fieldset&gt;
+&lt;label&gt;</code>  </li>
+</ul>
+<h3 id="input标签"><a href="#input标签" class="headerlink" title="input标签"></a>input标签</h3><p>type属性:</p>
+<ol>
+<li>text： 简单文本输入</li>
+<li>password： 加密文本输入</li>
+<li>radio： 单选框 ，相同的name ，为一组单选框</li>
+<li>chekbox： 复选框 ， 相同的name ，为一组复选框</li>
+<li>reset： 重置按钮 ，value为按钮名字，重置之前所有的输入</li>
+<li>submit：提交按钮 ，value为按钮名字 ，将输入的内容提交至 form 标签的 action属性对应的URL中</li>
+<li>button： 普通按钮 ，value为按钮名字<ul>
+<li>注意： 要想输入的内容能提交 ， 需要加一个name属性</li>
+</ul>
+</li>
+</ol>
+<p>require属性： 加了这个属性就表示，输入框中必须有输入</p>
+<p>lable : lable for id , lable标签for 中值  ，对应lable想关联的标签的id 值。</p>
+<p>textarea: 文本输入框</p>
+<p>select ： 下拉菜单 ， option为选项</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/13/HTML/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -787,8 +958,7 @@
 <li>简单理解就是，DNS 可以把 域名 转换为IP地址 </li>
 </ul>
 <h3 id="两种查看域名对应IP地址的方法"><a href="#两种查看域名对应IP地址的方法" class="headerlink" title="两种查看域名对应IP地址的方法"></a>两种查看域名对应IP地址的方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nslookup baidu.com</span><br><span class="line">ping baidu.com</span><br></pre></td></tr></table></figure>
-<h2 id="请求"><a href="#请求" class="headerlink" title="请求"></a>请求</h2><h3 id="请求百度页面"><a href="#请求百度页面" class="headerlink" title="请求百度页面"></a>请求百度页面</h3><p><img src="//video.jirengu.com/FsfB2P_WlfvCBOfU2vUARSL0AmCg" alt="请求"><br>访问百度网站   ，我们点击第一个，然后点Request  右边的view<br><img src="//video.jirengu.com/FlXCfBPkgLIkBd4ceo1wubiB-K9k" alt="图片"></p>
-<p>请求的格式是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1 动词 路径 协议/版本</span><br><span class="line">2 Key1: value1</span><br><span class="line">2 Key2: value2</span><br><span class="line">2 Key3: value3</span><br><span class="line">2 Content-Type: application/x-www-form-urlencoded</span><br><span class="line">2 Host: www.baidu.com</span><br><span class="line">2 User-Agent: curl/7.54.0</span><br><span class="line">3 </span><br><span class="line">4 要上传的数据</span><br></pre></td></tr></table></figure></p>
+<h2 id="请求"><a href="#请求" class="headerlink" title="请求"></a>请求</h2><p>请求的格式是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1 动词 路径 协议/版本</span><br><span class="line">2 Key1: value1</span><br><span class="line">2 Key2: value2</span><br><span class="line">2 Key3: value3</span><br><span class="line">2 Content-Type: application/x-www-form-urlencoded</span><br><span class="line">2 Host: www.baidu.com</span><br><span class="line">2 User-Agent: curl/7.54.0</span><br><span class="line">3 </span><br><span class="line">4 要上传的数据</span><br></pre></td></tr></table></figure></p>
 <p>###分析请求<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">GET / HTTP/1.1                        动词 路径 协议/版本</span><br><span class="line">Host: www.baidu.com               key1</span><br><span class="line">Connection: keep-alive             key2</span><br><span class="line">Cache-Control: max-age=0      key3</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
 <ol>
 <li>请求最多包含四部分，最少包含三部分。（也就是说第四部分可以为空）</li>
@@ -799,8 +969,7 @@
 <li>第 2 部分中的 Content-Type 标注了第 4 部分的格式</li>
 <li>如果有请求的第四部分，那么在 FormData 或 Payload 里面可以看到</li>
 </ol>
-<h2 id="响应"><a href="#响应" class="headerlink" title="响应"></a>响应</h2><h3 id="有请求就有响应，下面是百度的响应"><a href="#有请求就有响应，下面是百度的响应" class="headerlink" title="有请求就有响应，下面是百度的响应"></a>有请求就有响应，下面是百度的响应</h3><p><img src="//video.jirengu.com/FqFw99ah9wk45yKcfF5TKwrqIwI5" alt="查看 Response Headers，点击「view source」，点击「view source]"></p>
-<ul>
+<h2 id="响应"><a href="#响应" class="headerlink" title="响应"></a>响应</h2><h3 id="有请求就有响应"><a href="#有请求就有响应" class="headerlink" title="有请求就有响应"></a>有请求就有响应</h3><ul>
 <li>GET 请求和 POST 请求对应的响应可以一样，也可以不一样</li>
 <li>响应的第四部分可以很长很长很长</li>
 </ul>
@@ -1330,7 +1499,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1343,7 +1512,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
