@@ -229,7 +229,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/14/自己封装AJAX/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/31/cookie、session、localStorage入门/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="梁光静">
@@ -248,7 +248,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/14/自己封装AJAX/" itemprop="url">自己封装AJAX</a></h1>
+                <a class="post-title-link" href="/2018/08/31/cookie、session、localStorage入门/" itemprop="url">cookie、 session、localStorage入门</a></h1>
         
 
         <div class="post-meta">
@@ -260,8 +260,154 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-14T23:35:30+08:00">
-                2018-08-14
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-31T00:37:08+08:00">
+                2018-08-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-cookie和session的区别"><a href="#1-cookie和session的区别" class="headerlink" title="1. cookie和session的区别"></a>1. cookie和session的区别</h1><ul>
+<li>一般来说，Session 基于 Cookie 来实现。<h3 id="1-cookie"><a href="#1-cookie" class="headerlink" title="1. cookie"></a>1. cookie</h3></li>
+</ul>
+<ol>
+<li>服务器通过 Set-Cookie 头给客户端一串字符串</li>
+<li>客户端每次访问相同域名的网页时，必须带上这段字符串</li>
+<li>客户端要在一段时间内保存这个Cookie</li>
+<li>Cookie 默认在用户关闭页面后就失效，后台代码可以任意设置 Cookie 的过期时间</li>
+<li>大小大概在 4kb 以内<h3 id="2-session"><a href="#2-session" class="headerlink" title="2. session"></a>2. session</h3></li>
+<li>将 SessionID（随机数）通过 Cookie 发给客户端</li>
+<li>客户端访问服务器时，服务器读取 SessionID</li>
+<li>服务器有一块内存（哈希表）保存了所有 session</li>
+<li>通过 SessionID 我们可以得到对应用户的隐私信息，如 id、email</li>
+<li>这块内存（哈希表）就是服务器上的所有 session<h1 id="2-localStorage"><a href="#2-localStorage" class="headerlink" title="2. localStorage"></a>2. localStorage</h1></li>
+<li>LocalStorage 跟 HTTP 无关</li>
+<li>HTTP 不会带上 LocalStorage 的值</li>
+<li>只有相同域名的页面才能互相读取 LocalStorage（没有同源那么严格）</li>
+<li>每个域名 localStorage 最大存储量为 5Mb 左右（每个浏览器不一样）</li>
+<li>常用场景：记录有没有提示过用户（没有用的信息，不能记录密码）</li>
+<li>LocalStorage 永久有效，除非用户清理缓存<h1 id="3-SessionStorage（会话存储）"><a href="#3-SessionStorage（会话存储）" class="headerlink" title="3. SessionStorage（会话存储）"></a>3. SessionStorage（会话存储）</h1></li>
+</ol>
+<ul>
+<li>1、2、3、4 同上</li>
+</ul>
+<ol start="5">
+<li>SessionStorage 在用户关闭页面（会话结束）后就失效。</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/28/自己封装AJAX/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="梁光静">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="梁光静">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/28/自己封装AJAX/" itemprop="url">自己封装AJAX</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-28T23:35:30+08:00">
+                2018-08-28
               </time>
             
 
@@ -361,7 +507,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/04/理解jQuery的实现过程/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/25/DOM面试/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="梁光静">
@@ -380,7 +526,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/04/理解jQuery的实现过程/" itemprop="url">理解jQuery的实现过程</a></h1>
+                <a class="post-title-link" href="/2018/08/25/DOM面试/" itemprop="url">DOM面试</a></h1>
         
 
         <div class="post-meta">
@@ -392,8 +538,287 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-04T15:22:16+08:00">
-                2018-08-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-25T23:50:25+08:00">
+                2018-08-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-DOM事件模型"><a href="#1-DOM事件模型" class="headerlink" title="1. DOM事件模型"></a>1. <a href="https://www.jianshu.com/p/7054b1abb431" target="_blank" rel="noopener">DOM事件模型</a></h1><ol>
+<li>冒泡</li>
+<li>捕获</li>
+<li><a href="http://jsbin.com/raqakog/1/edit?js,console,output" target="_blank" rel="noopener">如果这个元素是被点击元素，那么执行顺序由监听顺序决定</a></li>
+</ol>
+<h1 id="2-移动端的触摸事件"><a href="#2-移动端的触摸事件" class="headerlink" title="2. 移动端的触摸事件"></a>2. 移动端的触摸事件</h1><ol>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//说明触摸开始</span><br><span class="line">document.body.ontouchstart !== undefined</span><br><span class="line">//触摸开始移动</span><br><span class="line">canvas.ontouchmove = function (ev) &#123;</span><br><span class="line">  var x = ev.touches[0].clientX;  //触摸的x坐标</span><br><span class="line">  var y = ev.touches[0].clientY;</span><br><span class="line">&#125;</span><br><span class="line">ontouchend  //触摸结束</span><br><span class="line">ontouchcancel  //触摸取消，因为有的浏览器不会触发touchend事件</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>模拟swipe事件（滑动）<br>记录两次touchmove的位置差，若后一次在前一次的右边，说明向右滑了</p>
+</li>
+</ol>
+<h1 id="3-事件委托"><a href="#3-事件委托" class="headerlink" title="3. 事件委托"></a>3. 事件委托</h1><ol>
+<li>监听父元素，看被触发的是哪个儿子，就是事件委托，委托父亲监听儿子</li>
+<li>优点是可以监听动态生成的儿子，减少了事件处理程序的数量，整个页面占用的内存空间会更少。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">function listen(element,eventType,selector,fn)&#123;</span><br><span class="line">  element.addEventListener(eventType,(e)=&gt;&#123;</span><br><span class="line">    let el = e.target</span><br><span class="line">    while(!el.matches(selector))&#123;  //可能点击的是li里的span  </span><br><span class="line">      if(element === el)&#123;  //如果点击的是父元素，则跳出监听</span><br><span class="line">        el =null</span><br><span class="line">        break</span><br><span class="line">      &#125;</span><br><span class="line">      el = el.parentNode</span><br><span class="line">    &#125;</span><br><span class="line">    el&amp;&amp;fn.call(el,e,el)</span><br><span class="line">  &#125;)</span><br><span class="line">  return element</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//&lt;ul id=&quot;list&quot;&gt;</span><br><span class="line">//  &lt;li&gt;&lt;/li&gt;</span><br><span class="line">//  ...</span><br><span class="line">//&lt;/ul&gt;</span><br><span class="line">//let list=document.querySelector(&apos;#list&apos;)</span><br><span class="line">//listen(list,&apos;click&apos;,&apos;li&apos;,()=&gt;&#123;&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/25/DOM事件/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="梁光静">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="梁光静">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/25/DOM事件/" itemprop="url">DOM事件</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-25T14:38:54+08:00">
+                2018-08-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-DOM0时代html和js的那些事儿"><a href="#1-DOM0时代html和js的那些事儿" class="headerlink" title="1. DOM0时代html和js的那些事儿"></a>1. DOM0时代html和js的那些事儿</h1><p>&lt;html><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        function print() &#123;</span><br><span class="line">            console.log(&apos;hi&apos;);</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;button id=&quot;x&quot; onclick=&quot;print&quot;&gt;a&lt;/button&gt;  //html里的onclick相当于eval(&apos;print&apos;) ，这样只会打印出print这个函数</span><br><span class="line">  &lt;button id=&quot;y&quot; onclick=&quot;print()&quot;&gt;b&lt;/button&gt;  //&apos;hi&apos;</span><br><span class="line">  &lt;button id=&quot;z&quot; onclick=&quot;print.call()&quot;&gt;c&lt;/button&gt;  //&apos;hi&apos;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure></p>
+<p>&lt;js><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x.onclick = print;  //js里这样是执行函数，输出&apos;hi&apos;</span><br><span class="line">x.onclick = print();  //这样写是得到函数的返回值，undefined</span><br><span class="line">x.onclick = print.call();  //同上，undefined</span><br></pre></td></tr></table></figure></p>
+<h1 id="2-DOM2"><a href="#2-DOM2" class="headerlink" title="2. DOM2"></a>2. DOM2</h1><h3 id="1-监听事件"><a href="#1-监听事件" class="headerlink" title="1. 监听事件"></a>1. 监听事件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">xxx.onclick = function()&#123;&#125;;  //不要用这个，因为可能会覆盖掉别人的事件</span><br><span class="line">//用下面这个</span><br><span class="line"></span><br><span class="line">function f1()&#123;&#125;</span><br><span class="line"></span><br><span class="line">xxx.addEventListener(&apos;click&apos;,f1)    //EventListener是队列，先绑定的就先触发</span><br><span class="line">xxx.removeEventListener(&apos;click&apos;,f1);</span><br></pre></td></tr></table></figure>
+<p>若想让事件被点一次后就取消监听，可以将f1写成下面这样<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function f1()&#123;</span><br><span class="line">  console.log(1);</span><br><span class="line">  xxx.removeEventListener(&apos;click&apos;,f1);  //这样f1执行一次后就自动取消xxx的监听，</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">xxx.addEventListener(&apos;click&apos;,f1)</span><br></pre></td></tr></table></figure></p>
+<p>这就是$btn.one(‘click’,fn);</p>
+<h3 id="2-嵌套的div被点击的顺序"><a href="#2-嵌套的div被点击的顺序" class="headerlink" title="2. 嵌套的div被点击的顺序"></a>2. 嵌套的div被点击的顺序</h3><p><img src="/images/HTML.png" alt="HTML"><img src="/images/JavaScript.png" alt="JavaScript"></p>
+<ul>
+<li><strong>面试题1:</strong>请问点击儿子的div，这三个函数的执行顺序是什么？<br><img src="/images/内部执行顺序.png" alt="内部执行顺序"><br>默认的顺序是像右边的箭头序列，先最里面的儿子再爸爸再爷爷，但如果给addEventListener加个true的话，事件就会到左边来，如下<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">grand1.addEventListener(&apos;click&apos;,function fn1()&#123;</span><br><span class="line">    console.log(&apos;爷爷&apos;)</span><br><span class="line">&#125;,true)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="/images/true.png" alt="addEventListener(true)"><br>这样执行顺序就是爷爷 -&gt; 儿子 -&gt; 爸爸。<br>左边的（加true的顺序），叫做捕获阶段，右边叫冒泡阶段。</p>
+<ul>
+<li><p><strong>面试题2：若给同一个div加上true和false呢？</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">child1.addEventListener(&apos;click&apos;,function fn1()&#123;</span><br><span class="line">    console.log(&apos;儿子冒泡&apos;)</span><br><span class="line">&#125;,false)</span><br><span class="line">child1.addEventListener(&apos;click&apos;,function fn1()&#123;</span><br><span class="line">    console.log(&apos;儿子捕获&apos;)</span><br><span class="line">&#125;,true)</span><br><span class="line">//点击child出现&apos;儿子捕获&apos;,&apos;儿子冒泡&apos;</span><br><span class="line">//若是给被点击的本身加上true和false，则按事件添加的顺序执行</span><br><span class="line">//若给爸爸或是爷爷添加true和false，则是按上图箭头顺序执行</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>stopPropagation()<br>这个方法可以让它那一层停止往上传播</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">child1.addEventListener(&apos;click&apos;,function fn1(e)&#123;</span><br><span class="line">    e.stopPropagation();</span><br><span class="line">&#125;)  //这样点击儿子，就只会执行儿子，不会执行爸爸和爷爷</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="3-点击别处关闭浮层"><a href="#3-点击别处关闭浮层" class="headerlink" title="3. 点击别处关闭浮层"></a>3. 点击别处关闭浮层</h3><p>html<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;wraper&quot; class=&quot;wraper&quot;&gt;</span><br><span class="line">    &lt;button id=&quot;clickMe&quot;&gt;点我&lt;/button&gt;</span><br><span class="line">    &lt;div id=&quot;popover&quot; class=&quot;popover&quot;&gt;</span><br><span class="line">        &lt;input type=&quot;checkbox&quot;&gt;浮层</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>错误示范1，js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$(clickMe).on(&apos;click&apos;,function () &#123;</span><br><span class="line">    $(popover).show();</span><br><span class="line">&#125;);</span><br><span class="line">$(wrapper).on(&apos;click&apos;,false);  </span><br><span class="line">//这里有错误，浮层出来后无法点击checkbox，因为这里的false，阻止了所有默认事件，应该改成下面那样</span><br><span class="line">$(document).on(&apos;click&apos;,function () &#123;</span><br><span class="line">    $(popover).hide();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>更新版1，还是不完美<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$(clickMe).on(&apos;click&apos;,function () &#123;</span><br><span class="line">    $(popover).show();</span><br><span class="line">&#125;);</span><br><span class="line">$(wrapper).on(&apos;click&apos;,function(e)&#123;</span><br><span class="line">    e.stopPropagation();    //阻止冒泡</span><br><span class="line">&#125;);</span><br><span class="line">$(document).on(&apos;click&apos;,function () &#123;</span><br><span class="line">    $(popover).hide();   </span><br><span class="line">&#125;);    //这样若有多个浮层，则会监听多次document，浪费资源，可以改成下面的</span><br></pre></td></tr></table></figure></p>
+<p>错误示范2，js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$(clickMe).on(&apos;click&apos;,function () &#123;</span><br><span class="line">    $(popover).show();</span><br><span class="line">    $(document).one(&apos;click&apos;,function () &#123;  //改为one</span><br><span class="line">      $(popover).hide();   </span><br><span class="line">    &#125;);  </span><br><span class="line">&#125;);    //若没有阻止冒泡，浮层不会显示出来，因为hide也会执行</span><br><span class="line"></span><br><span class="line">//可以添加一个setTimeout使它不会马上执行，如下</span><br><span class="line">$(clickMe).on(&apos;click&apos;,function () &#123;</span><br><span class="line">    $(popover).show();</span><br><span class="line">    setTimeout(function()&#123;</span><br><span class="line">      $(document).one(&apos;click&apos;,function () &#123;  </span><br><span class="line">        $(popover).hide();   </span><br><span class="line">      &#125;);  </span><br><span class="line">    &#125;,0)    //添加setTimeout后，document.onclick不会马上执行，当下一次点击屏幕的时候才会执行</span><br><span class="line">//这样还是有bug，点击popover内部也会执行hide()</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>完美版本1<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$(clickMe).on(&apos;click&apos;,function () &#123;</span><br><span class="line">    $(popover).show();</span><br><span class="line">    $(document).one(&apos;click&apos;,function () &#123; </span><br><span class="line">        $(popover).hide();   </span><br><span class="line">    &#125;);  //只在浮层show的时候监听document一次</span><br><span class="line">&#125;);</span><br><span class="line">$(wrapper).on(&apos;click&apos;,function(e)&#123;</span><br><span class="line">    e.stopPropagation();  //阻止冒泡，这样点击popover内部就不会执行document.onclick，但这个事件还是会存放在那里</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>完美版本2<br>更新上个版本点按钮不会关闭浮层的bug<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$(clickMe).on(&apos;click&apos;,function () &#123;</span><br><span class="line">    if($(popover).is(&apos;:hidden&apos;))&#123;  //若浮层是关闭的，点击按钮则打开</span><br><span class="line">        $(popover).show();</span><br><span class="line">    &#125;else &#123;</span><br><span class="line">        $(popover).hide();  //和上面相反</span><br><span class="line">    &#125;</span><br><span class="line">    $(document).one(&apos;click&apos;,function () &#123;</span><br><span class="line">        $(popover).hide();</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line">$(wrapper).on(&apos;click&apos;,function(e)&#123;</span><br><span class="line">    e.stopPropagation();  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/22/理解jQuery的实现过程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="梁光静">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="梁光静">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/22/理解jQuery的实现过程/" itemprop="url">理解jQuery的实现过程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-22T15:22:16+08:00">
+                2018-08-22
               </time>
             
 
@@ -511,7 +936,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/28/Javascript 中 apply、call、bind的理解/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/21/页面从输入 URL 到页面加载显示完成的过程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="梁光静">
@@ -530,7 +955,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/07/28/Javascript 中 apply、call、bind的理解/" itemprop="url">Javascript 中 apply、call、bind的理解</a></h1>
+                <a class="post-title-link" href="/2018/08/21/页面从输入 URL 到页面加载显示完成的过程/" itemprop="url">页面从输入 URL 到页面加载显示完成的过程</a></h1>
         
 
         <div class="post-meta">
@@ -542,8 +967,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-28T13:16:29+08:00">
-                2018-07-28
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-21T10:29:48+08:00">
+                2018-08-21
               </time>
             
 
@@ -582,73 +1007,672 @@
       
         
           
-            <h3 id="1-apply、call"><a href="#1-apply、call" class="headerlink" title="1.apply、call"></a>1.apply、call</h3><p>在 javascript 中，call 和 apply 都是为了改变某个函数运行时的上下文（context）而存在的，换句话说，就是为了改变函数体内部 this 的指向。<br>JavaScript 的一大特点是，函数存在「定义时上下文」和「运行时上下文」以及「上下文是可以改变的」这样的概念。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function fruits() &#123;&#125;</span><br><span class="line"> </span><br><span class="line">fruits.prototype = &#123;</span><br><span class="line">    color: &quot;red&quot;,</span><br><span class="line">    say: function() &#123;</span><br><span class="line">        console.log(&quot;My color is &quot; + this.color);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">var apple = new fruits;</span><br><span class="line">apple.say();    //My color is red</span><br></pre></td></tr></table></figure></p>
-<p>但是如果我们有一个对象banana= {color : “yellow”} ,我们不想对它重新定义 say 方法，那么我们可以通过 call 或 apply 用 apple 的 say 方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">banana = &#123;</span><br><span class="line">    color: &quot;yellow&quot;</span><br><span class="line">&#125;</span><br><span class="line">apple.say.call(banana);     //My color is yellow</span><br><span class="line">apple.say.apply(banana);    //My color is yellow</span><br><span class="line"></span><br><span class="line">banana = &#123;</span><br><span class="line">    color: &quot;yellow&quot;</span><br><span class="line">&#125;</span><br><span class="line">apple.say.call(banana);     //My color is yellow</span><br><span class="line">apple.say.apply(banana);    //My color is yellow</span><br></pre></td></tr></table></figure></p>
-<p>所以，可以看出 call 和 apply 是为了动态改变 this 而出现的，当一个 object 没有某个方法（本栗子中banana没有say方法），但是其他的有（本栗子中apple有say方法），我们可以借助call或apply用其它对象的方法来操作。</p>
-<h3 id="2-apply、call-的区别"><a href="#2-apply、call-的区别" class="headerlink" title="2.apply、call 的区别"></a>2.apply、call 的区别</h3><p>对于 apply、call 二者而言，作用完全一样，只是接受参数的方式不太一样。例如，有一个函数定义如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var func = function(arg1, arg2) &#123;</span><br><span class="line"> </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>就可以通过如下方式来调用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">func.call(this, arg1, arg2);</span><br><span class="line">func.apply(this, [arg1, arg2])</span><br></pre></td></tr></table></figure></p>
-<p>其中 this 是你想指定的上下文，他可以是任何一个 JavaScript 对象(JavaScript 中一切皆对象)，call 需要把参数按顺序传递进去，而 apply 则是把参数放在数组里。</p>
-<p>JavaScript 中，某个函数的参数数量是不固定的，因此要说适用条件的话，当你的参数是明确知道数量时用 call 。<br>而不确定的时候用 apply，然后把参数 push 进数组传递进去。当参数数量不确定时，函数内部也可以通过 arguments 这个数组来遍历所有的参数。<br>为了巩固加深记忆，下面列举一些常用用法：</p>
+            <h1 id="1-浏览器查找域名对应的-IP-地址："><a href="#1-浏览器查找域名对应的-IP-地址：" class="headerlink" title="1. 浏览器查找域名对应的 IP 地址："></a>1. 浏览器查找域名对应的 IP 地址：</h1><p>通过DNS查询到相应的IP地址，相当于你的路由问电信公司，于是电信公司返回对应的IP地址。<br><strong>补充说明：</strong></p>
+<ul>
+<li>你若修改了hosts文件，可自己指定域名的IP，绕过DNS。</li>
+<li>URL和域名是两个概念：例如，xiedaimala.com是这个网站的域名，根据这个域名找到写代码啦的服务器，xiedaimala.com/courses 是URL，根据这个URL定位到写代码啦的课程表。</li>
+<li>IP 地址与域名不是一一对应的关系：可以把多个提供相同服务的服务器 IP 设置为同一个域名，但在同一时刻一个域名只能解析出一个 IP地址；同时，一个 IP 地址可以绑定多个域名，数量不限；</li>
+</ul>
+<h1 id="2-浏览器和服务器建立连接——三次握手（采用TCP协议）"><a href="#2-浏览器和服务器建立连接——三次握手（采用TCP协议）" class="headerlink" title="2. 浏览器和服务器建立连接——三次握手（采用TCP协议）"></a>2. 浏览器和服务器建立连接——三次握手（采用TCP协议）</h1><ul>
+<li>浏览器说：服务器我要连接你了，可以吗</li>
+<li>服务器说：好的，连接吧</li>
+<li>浏览器说：好的，那我连接了<br>连接成功！</li>
+</ul>
+<h1 id="3-网页的请求与显示"><a href="#3-网页的请求与显示" class="headerlink" title="3. 网页的请求与显示"></a>3. 网页的请求与显示</h1><ol>
+<li>浏览器向服务器发送请求的第一部分</li>
+<li>浏览器向服务器发送请求头（第二部分），若是post请求还会发送请求体（第四部分）</li>
+<li>服务器应答，发送响应的第一部分</li>
+<li>服务器发送响应的响应头信息</li>
+<li>服务器发送以Content-type描述的格式的数据</li>
+<li>在浏览器还没有完全接收 HTML 文件时便开始渲染、显示网页</li>
+<li>在执行 HTML 中代码时，根据需要，浏览器会继续请求图片、CSS、JavsScript等文件，过程同请求 HTML </li>
+</ol>
+<h1 id="4-断开连接——四次握手"><a href="#4-断开连接——四次握手" class="headerlink" title="4. 断开连接——四次握手"></a>4. 断开连接——四次握手</h1><ul>
+<li><p>主机向服务器发送一个断开连接的请求（不早了，我该走了）；</p>
+</li>
+<li><p>服务器接到请求后发送确认收到请求的信号（知道了）；</p>
+</li>
+<li><p>服务器向主机发送断开通知（我也该走了）；</p>
+</li>
+<li><p>主机接到断开通知后断开连接并反馈一个确认信号（嗯，好的），服务器收到确认信号后断开连接；</p>
+</li>
+</ul>
+<p><strong>补充说明：</strong></p>
+<ul>
+<li>为什么服务器在接到断开请求时不立即同意断开：当服务器收到断开连接的请求时，可能仍然有数据未发送完毕，所以服务器先发送确认信号，等所有数据发送完毕后再同意断开。</li>
+<li>第四次握手后，主机发送确认信号后并没有立即断开连接，而是等待了 2 个报文传送周期，原因是：如果第四次握手的确认信息丢失，服务器将会重新发送第三次握手的断开连接的信号，而服务器发觉丢包与重新发送的断开连接到达主机的时间正好为 2 个报文传输周期。</li>
+</ul>
+<p>未完待续…</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/20/JS函数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="梁光静">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="梁光静">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/20/JS函数/" itemprop="url">JS函数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-20T13:27:06+08:00">
+                2018-08-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-函数的声明方式"><a href="#1-函数的声明方式" class="headerlink" title="1. 函数的声明方式"></a>1. 函数的声明方式</h1>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">1.function a(a,b)&#123;</span><br><span class="line">     return a+b;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> 2. var a = function(a,b)&#123;    //匿名函数，函数表达式</span><br><span class="line">     return a+b;</span><br><span class="line"> &#125;</span><br><span class="line"> a(1,2)    //3</span><br><span class="line"></span><br><span class="line"> 3.var b = new Function(</span><br><span class="line">     &apos;a&apos;, //构造函数，    基本没人用</span><br><span class="line">     &apos;b&apos;,</span><br><span class="line">     &apos;return a+b&apos;</span><br><span class="line"> )；</span><br><span class="line"> b(1,2)    //3</span><br><span class="line"></span><br><span class="line"> var b = Function(&apos;a&apos;,&apos;b&apos;,&apos;return a+b&apos;)</span><br><span class="line"> b(1,2)    //3，加new和不加new没区别</span><br><span class="line"></span><br><span class="line"> var b = Function(&apos;return &quot;hello world&quot;&apos;);  </span><br><span class="line"> //若只有一个参数，则就是函数体</span><br><span class="line"></span><br><span class="line"> 4.var e = (a,b) =&gt; &#123;</span><br><span class="line">     var m = a*2; </span><br><span class="line">     var n = b*2; </span><br><span class="line">     return m+n;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> //若只有一句话，并且不返回对象，可以同时去掉return和&#123;&#125;</span><br><span class="line">  var e = (a,b) =&gt; a+b</span><br><span class="line"></span><br><span class="line"> //若只有一个参数，可以省略()</span><br><span class="line">  var e = n =&gt; n*n</span><br></pre></td></tr></table></figure>
+<h1 id="2-若重复声明函数，由于函数名的提升，前一次声明在任何时候都是无效的，这一点要特别注意。如下"><a href="#2-若重复声明函数，由于函数名的提升，前一次声明在任何时候都是无效的，这一点要特别注意。如下" class="headerlink" title="2. 若重复声明函数，由于函数名的提升，前一次声明在任何时候都是无效的，这一点要特别注意。如下"></a>2. 若重复声明函数，<strong>由于函数名的提升</strong>，前一次声明在任何时候都是无效的，这一点要特别注意。如下</h1><pre><code>function f() {
+  console.log(1);
+}
+f() // 2
+
+function f() {
+  console.log(2);
+}
+f() // 2
+</code></pre><p>   函数的变量提升：<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f();    //不会报错，因为下面的变量提升了</span><br><span class="line"></span><br><span class="line">    function f() &#123;&#125;</span><br></pre></td></tr></table></figure></p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f();</span><br><span class="line">var f = function ()&#123;&#125;;</span><br><span class="line">// 报错，TypeError: undefined is not a function</span><br><span class="line">// 因为上面这两行等同于下面</span><br><span class="line">var f;</span><br><span class="line">f();</span><br><span class="line">f = function () &#123;&#125;;</span><br></pre></td></tr></table></figure>
+<p>   所以如果同时采用function命令和赋值语句声明同一个函数，最后总是采用赋值语句的定义。<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var f = function () &#123;</span><br><span class="line">     console.log(&apos;1&apos;);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   function f() &#123;</span><br><span class="line">     console.log(&apos;2&apos;);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   f() // 1，相当于下面</span><br><span class="line">    </span><br><span class="line">   var f;</span><br><span class="line">   function f() &#123;</span><br><span class="line">     console.log(&apos;2&apos;);</span><br><span class="line">   &#125;</span><br><span class="line">   f = function () &#123;</span><br><span class="line">      console.log(&apos;1&apos;);</span><br><span class="line">   &#125;</span><br><span class="line">   f();    //1</span><br></pre></td></tr></table></figure></p>
+<h1 id="3-注意：不要在if语句和try语句里使用函数声明"><a href="#3-注意：不要在if语句和try语句里使用函数声明" class="headerlink" title="3. 注意：不要在if语句和try语句里使用函数声明"></a>3. 注意：不要在if语句和try语句里使用函数声明</h1>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">if (false) &#123;</span><br><span class="line">  function f() &#123;&#125;    //即使是false，f函数也会被声    明，因为函数名的提升</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f() // 不报错，因为函数名提升，所以不要在if    语句里使用函数声明</span><br><span class="line"></span><br><span class="line">//但可以使用函数表达式</span><br><span class="line">if (false) &#123;</span><br><span class="line">  var f = function () &#123;&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f() // undefined</span><br></pre></td></tr></table></figure>
+<h1 id="4-函数的属性"><a href="#4-函数的属性" class="headerlink" title="4. 函数的属性"></a>4. 函数的属性</h1><p>name<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function f1() &#123;&#125;</span><br><span class="line">f1.name    // &quot;f1&quot;，name属性</span><br><span class="line"></span><br><span class="line">var f2 = function()&#123;&#125;;</span><br><span class="line">f2.name    //f2</span><br><span class="line"></span><br><span class="line">var f3 = function f4()&#123;&#125;;</span><br><span class="line">f3.name    //f4</span><br><span class="line"></span><br><span class="line">var f5 = new Function(&apos;x&apos;,&apos;y&apos;,&apos;return x+y&apos;);</span><br><span class="line">f5.name    //&apos;anonymous&apos;，匿名的</span><br></pre></td></tr></table></figure></p>
+<p>   length<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">function f(a, b) &#123;&#125;</span><br><span class="line">f.length // 2，函数的参数个数</span><br></pre></td></tr></table></figure></p>
+<p>   toString<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">   function f()&#123;</span><br><span class="line">       console.log(&apos;可以的&apos;);</span><br><span class="line">   &#125;</span><br><span class="line">   f.toString();    // &quot;function f()&#123;</span><br><span class="line">                    //    console.log(&apos;可以的&apos;);                     //  &#125;&quot;</span><br><span class="line">   //利用这一点可以变相实现多行字符串</span><br><span class="line">   function f() &#123;/*</span><br><span class="line">     这是一个</span><br><span class="line">     多行注释</span><br><span class="line">   */&#125;</span><br><span class="line"></span><br><span class="line">   f.toString()</span><br><span class="line">   // &quot;function f()&#123;/*</span><br><span class="line">   //   这是一个</span><br><span class="line">   //   多行注释    </span><br><span class="line">// */&#125;&quot;</span><br></pre></td></tr></table></figure></p>
+<p>   <a href="http://javascript.ruanyifeng.com/grammar/function.html#toc10" target="_blank" rel="noopener">变相实现多行字符串</a></p>
+<h1 id="5-局部变量"><a href="#5-局部变量" class="headerlink" title="5. 局部变量"></a>5. 局部变量</h1><p>在函数内部声明的变量是局部变量，在函数以外声明的全是全局变量，在其他区块中声明的一律也是全局变量。</p>
+<h1 id="6-函数内部也有变量提升！"><a href="#6-函数内部也有变量提升！" class="headerlink" title="6. 函数内部也有变量提升！"></a>6. 函数内部也有变量提升！</h1><h1 id="7-函数的作用域，就是其声明时所在的作用域，与其运行时所在的作用域无关。"><a href="#7-函数的作用域，就是其声明时所在的作用域，与其运行时所在的作用域无关。" class="headerlink" title="7. 函数的作用域，就是其声明时所在的作用域，与其运行时所在的作用域无关。"></a>7. 函数的作用域，就是其声明时所在的作用域，与其运行时所在的作用域无关。</h1>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var a = 1;</span><br><span class="line">var x = function () &#123;</span><br><span class="line">  console.log(a);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">function f() &#123;</span><br><span class="line">  var a = 2;</span><br><span class="line">  x();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f() // 1</span><br></pre></td></tr></table></figure>
+<h1 id="8-传递方式"><a href="#8-传递方式" class="headerlink" title="8. 传递方式"></a>8. 传递方式</h1>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123; p: 1 &#125;;</span><br><span class="line"></span><br><span class="line">function f(o) &#123;</span><br><span class="line">  o.p = 2;</span><br><span class="line">&#125;</span><br><span class="line">f(obj);  //相当于把obj的地址传进去</span><br><span class="line"></span><br><span class="line">obj.p // 2</span><br></pre></td></tr></table></figure>
+<p>   如果函数内部修改的，不是参数对象的某个属性，而是替换掉整个参数，这时不会影响到原始值。<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var obj = [1, 2, 3];</span><br><span class="line"></span><br><span class="line">function f(o) &#123;</span><br><span class="line">  o = [2, 3, 4];</span><br><span class="line">&#125;</span><br><span class="line">f(obj);</span><br><span class="line"></span><br><span class="line">obj // [1, 2, 3]</span><br></pre></td></tr></table></figure></p>
+<p>   <strong>这是因为，o的值实际是参数obj的地址，重新对o赋值导致o指向另一个地址，保存在原地址上的值不受影响。复合类型是传地址</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var p = 2;</span><br><span class="line"></span><br><span class="line">function f(p) &#123;</span><br><span class="line">  p = 3;</span><br><span class="line">&#125;</span><br><span class="line">f(p);  //基本类型，所以传进去的不是地址而只是p的值</span><br><span class="line"></span><br><span class="line">p // 2</span><br></pre></td></tr></table></figure></p>
+<p>原始类型的值，传入函数只是值的拷贝，所以怎么修改都不会影响到原始值</p>
+<h1 id="9-arguments对象"><a href="#9-arguments对象" class="headerlink" title="9. arguments对象"></a>9. arguments对象</h1><p>可以通过argument对象获得参数<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function f(a, a) &#123;</span><br><span class="line">  console.log(arguments[0]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f(1) // 1</span><br></pre></td></tr></table></figure></p>
+<p>   正常模式下，arguments对象还可以在运行时修改参数。严格模式下不行<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var f = function(a, b) &#123;</span><br><span class="line">  arguments[0] = 3;</span><br><span class="line">  arguments[1] = 2;</span><br><span class="line">  return a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f(1, 1) // 5</span><br><span class="line"></span><br><span class="line">arguments.length //可以知道传入多少个参数</span><br></pre></td></tr></table></figure></p>
+<p>   arguments不是数组，但可以<a href="http://javascript.ruanyifeng.com/grammar/function.html#toc20" target="_blank" rel="noopener">转换为数组</a></p>
+<h1 id="10-返回值"><a href="#10-返回值" class="headerlink" title="10. 返回值"></a>10. 返回值</h1><p>函数即使没有return，JS会自动加上return undefined；</p>
+<h1 id="11-function的不一致性"><a href="#11-function的不一致性" class="headerlink" title="11. function的不一致性"></a>11. function的不一致性</h1>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function y()&#123;&#125;;</span><br><span class="line">y;    //f y()&#123;&#125;</span><br><span class="line"> </span><br><span class="line">var x = function i()&#123;&#125;;</span><br><span class="line">i;    //Error: i is not defined，i只能作用在它自己的函数里</span><br></pre></td></tr></table></figure>
+<h1 id="12-函数的调用"><a href="#12-函数的调用" class="headerlink" title="12. 函数的调用"></a>12. 函数的调用</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f(1,2);</span><br><span class="line">f.call(undefined,1,2);  //这两种调用方式等价</span><br></pre></td></tr></table></figure>
+<h1 id="13-this和arguments"><a href="#13-this和arguments" class="headerlink" title="13. this和arguments"></a>13. this和arguments</h1><p><strong>this是call()的第一个参数</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">f = function()&#123;</span><br><span class="line">    console.log(this);</span><br><span class="line">&#125;</span><br><span class="line">f.call(undefined);    //正常模式下，若传入的是null或undefined，打印出来的就是window</span><br><span class="line"></span><br><span class="line">f = function()&#123;</span><br><span class="line">    &apos;use strict&apos;</span><br><span class="line">    console.log(this);</span><br><span class="line">&#125;</span><br><span class="line">f.call(undefined);    //严格模式打印出undefined</span><br></pre></td></tr></table></figure></p>
+<p>面试题1：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">  foo: function()&#123;</span><br><span class="line">    console.log(this)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var bar = obj.foo</span><br><span class="line">obj.foo() // 打印出obj，因为转换为 obj.foo.call(obj)，this 就是 obj</span><br><span class="line">bar()   //打印出window，转换为 bar.call()，由于没有传东西，所以 this 就是 undefined，最后浏览器给你一个默认的 this —— window 对象</span><br></pre></td></tr></table></figure></p>
+<p>面试题2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function fn ()&#123; console.log(this) &#125;</span><br><span class="line">var arr = [fn, fn2]</span><br><span class="line">arr[0]() // 这里面的 this 又是什么呢？</span><br></pre></td></tr></table></figure></p>
+<p>我们可以把 arr<a href="">0</a> 想象为arr.0( )，虽然后者的语法错了，但是形式与转换代码一样，于是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">arr.0.call(arr);</span><br><span class="line">//this就是arr</span><br></pre></td></tr></table></figure></p>
+<p><strong>arguments是伪数组</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f = function()&#123;</span><br><span class="line">    console.log(arguments);</span><br><span class="line">&#125;</span><br><span class="line">f.call(undefined,1,2,3);    //[1,2,3,......]</span><br></pre></td></tr></table></figure></p>
+<p>arguments有数组的一些特性，但没有在Array的原型链中，所以arguments没有数组的方法，如push<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arguments.__proto__ === Array.prototype //false</span><br></pre></td></tr></table></figure></p>
+<h1 id="14-函数的作用域"><a href="#14-函数的作用域" class="headerlink" title="14. 函数的作用域"></a>14. 函数的作用域</h1><p><strong>看到面试题先把代码改了，做变量提升！再做题</strong></p>
+<h2 id="面试题1："><a href="#面试题1：" class="headerlink" title="面试题1："></a>面试题1：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var a = 1;</span><br><span class="line">function f1() &#123;</span><br><span class="line">    console.log(a)</span><br><span class="line">    var a = 2;</span><br><span class="line">    f4.call();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function f4() &#123;</span><br><span class="line">    console.log(a);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f1.call();    //??</span><br></pre></td></tr></table></figure>
+<p>答案：undefined（f1的console.log）、1(f4的console.log)</p>
+<h2 id="面试题2"><a href="#面试题2" class="headerlink" title="面试题2:"></a>面试题2:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var a = 1;</span><br><span class="line">function f1() &#123;</span><br><span class="line">    console.log(a)</span><br><span class="line">    var a = 2;</span><br><span class="line">    f4.call();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function f4() &#123;</span><br><span class="line">    console.log(a);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">a=2;</span><br><span class="line">f1.call();    //？</span><br></pre></td></tr></table></figure>
+<p>答案：undefined、2</p>
+<h2 id="面试题3"><a href="#面试题3" class="headerlink" title="面试题3:"></a>面试题3:</h2><p>html<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">    &lt;li&gt;1&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;2&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;3&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;4&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;5&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;6&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure></p>
+<p>JS<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var liTags = document.querySelectorAll(&apos;li&apos;);</span><br><span class="line">for(var i=0;i&lt;liTags.length;i++)&#123;</span><br><span class="line">    liTags[i].onclick = function () &#123;</span><br><span class="line">        console.log(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//请问点3时，输出什么</span><br></pre></td></tr></table></figure></p>
+<p>答案：6<br>先JS变量提升<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var liTags;</span><br><span class="line">var i;</span><br><span class="line">liTags = document.querySelectorAll(&apos;li&apos;);</span><br><span class="line">for(i=0;i&lt;liTags.length;i++)&#123;</span><br><span class="line">    liTags[i].onclick = function () &#123;</span><br><span class="line">        console.log(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>因为点3时，for循环已执行完了，i变成6，所以输出的是6</p>
+<h2 id="面试题4"><a href="#面试题4" class="headerlink" title="面试题4"></a>面试题4</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var x = function () &#123;</span><br><span class="line">  console.log(a);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">function y(f) &#123;</span><br><span class="line">  var a = 2;</span><br><span class="line">  f();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">y(x)    // ?</span><br></pre></td></tr></table></figure>
+<p>答案:<code>a is not defined</code><br>因为函数x在外部，不会引用y的内部变量</p>
+<h1 id="15-闭包"><a href="#15-闭包" class="headerlink" title="15. 闭包"></a>15. 闭包</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = 1;</span><br><span class="line"></span><br><span class="line">function f4() &#123;</span><br><span class="line">    console.log(a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>若一个函数使用了它作用域外的变量，那 (这个函数+变量) 就是闭包。<br>函数外部无法访问函数内部的变量，但使用闭包就可以<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function f1() &#123;</span><br><span class="line">  var n = 999;</span><br><span class="line">  function f2() &#123;</span><br><span class="line">    console.log(n);</span><br><span class="line">  &#125;</span><br><span class="line">  return f2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var result = f1();</span><br><span class="line">result(); // 999，闭包就是f2</span><br></pre></td></tr></table></figure></p>
+<p>本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁。<br>闭包的第二个作用就是让它读取的这些变量始终保持在内存中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function createIncrementor(start) &#123;</span><br><span class="line">  return function () &#123;</span><br><span class="line">    return start++;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var inc = createIncrementor(5);</span><br><span class="line"></span><br><span class="line">inc() // 5</span><br><span class="line">inc() // 6</span><br><span class="line">inc() // 7</span><br></pre></td></tr></table></figure></p>
+<p>闭包的另一个用处，是封装对象的私有属性和私有方法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function Person(name) &#123;</span><br><span class="line">  var _age;</span><br><span class="line">  function setAge(n) &#123;</span><br><span class="line">    _age = n;</span><br><span class="line">  &#125;</span><br><span class="line">  function getAge() &#123;</span><br><span class="line">    return _age;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  return &#123;</span><br><span class="line">    name: name,</span><br><span class="line">    getAge: getAge,</span><br><span class="line">    setAge: setAge</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var p1 = Person(&apos;张三&apos;);</span><br><span class="line">p1.setAge(25);</span><br><span class="line">p1.getAge() // 25</span><br></pre></td></tr></table></figure></p>
+<p>函数Person的内部变量_age，通过闭包getAge和setAge，变成了返回对象p1的私有变量。</p>
+<h1 id="16-同名参数"><a href="#16-同名参数" class="headerlink" title="16. 同名参数"></a>16. 同名参数</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function f(a, a) &#123;</span><br><span class="line">  console.log(a);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f(1, 2) // 2，以后面那个为准</span><br><span class="line"></span><br><span class="line">function f(a, a) &#123;</span><br><span class="line">  console.log(a);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f(1) // undefined，以后面那个为准，若要取第一个，可以用arguments对象</span><br></pre></td></tr></table></figure>
+<h1 id="17-立即调用的函数表达式（IIFE）"><a href="#17-立即调用的函数表达式（IIFE）" class="headerlink" title="17 .立即调用的函数表达式（IIFE）"></a>17 .立即调用的函数表达式（IIFE）</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">function()&#123; /* code */ &#125;();</span><br><span class="line">// SyntaxError: Unexpected token (</span><br></pre></td></tr></table></figure>
+<p>因为JS把function在行首的，一律解释成语句，而语句后不应该出现()，最简单的处理，就是将其放在一个圆括号里面。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">(function()&#123; /* code */ &#125;());</span><br><span class="line">// 或者</span><br><span class="line">(function()&#123; /* code */ &#125;)();</span><br><span class="line">//或者</span><br><span class="line">-function()&#123; /* code */ &#125;();</span><br><span class="line">//或者</span><br><span class="line">+function()&#123; /* code */ &#125;();</span><br><span class="line">//或者</span><br><span class="line">!function()&#123; /* code */ &#125;();</span><br><span class="line">//或者</span><br><span class="line">~function()&#123; /* code */ &#125;();</span><br><span class="line">//注意，上面前两种写法最后的分号都是必须的。</span><br></pre></td></tr></table></figure></p>
+<p>推而广之，任何以表达式来处理函数定义的方法，都是可以的</p>
+<h1 id="18-eval"><a href="#18-eval" class="headerlink" title="18. eval"></a>18. eval</h1><p>eval命令的作用是，将字符串当作语句执行。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">eval(&apos;var a = 1;&apos;);</span><br><span class="line">a // 1</span><br></pre></td></tr></table></figure></p>
+<p>JavaScript 规定，如果使用严格模式，eval内部声明的变量，不会影响到外部作用域。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(function f() &#123;</span><br><span class="line">  &apos;use strict&apos;;</span><br><span class="line">  eval(&apos;var foo = 123&apos;);</span><br><span class="line">  console.log(foo);  // ReferenceError: foo is not defined</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure></p>
+<p>即使在严格模式下，eval依然可以读写当前作用域的变量。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(function f() &#123;</span><br><span class="line">  &apos;use strict&apos;;</span><br><span class="line">  var foo = 1;</span><br><span class="line">  eval(&apos;foo = 2&apos;);</span><br><span class="line">  console.log(foo);  // 2</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/JavaScript-Dom入门/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="梁光静">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="梁光静">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/16/JavaScript-Dom入门/" itemprop="url">JavaScript Dom入门</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-16T23:32:07+08:00">
+                2018-08-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>DOM 目前的通用版本是DOM3</p>
+<h1 id="1-JS初级主要就两个作用："><a href="#1-JS初级主要就两个作用：" class="headerlink" title="1. JS初级主要就两个作用："></a>1. JS初级主要就两个作用：</h1><blockquote>
+<p>1.找元素<br>2.给元素增加/删除class</p>
+</blockquote>
+<h1 id="2-节点API"><a href="#2-节点API" class="headerlink" title="2. 节点API"></a>2. 节点API</h1><ul>
+<li><p><strong>1. nodeType</strong></p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Node.ELEMENT_NODE === 1  //true，元素节点</span><br><span class="line">Node.TEXT_NODE === 3     //true，文本节点</span><br><span class="line">Node.COMMENT_NODE === 8 //true，注释节点    </span><br><span class="line">Node.DOCUMENT_TYPE_NODE === 10 //true，例：&lt;!DOCTYPE html&gt;</span><br><span class="line">Node.DOCUMENT_FRAGMENT_NODE === 11 </span><br><span class="line">//重点！</span><br><span class="line"></span><br><span class="line">xxx.nodeType === 3       //可用来检验xxx是一个元素节点还是元素中的文本</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>2. tagName</strong><br>ul的tagName为’UL’（大写！）</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let brother = li.getElementsByTagName(&apos;UL&apos;)[0];</span><br></pre></td></tr></table></figure>
+<p>  getElementsByTagName这个API搜索的是li元素的后代，并按顺序返回所有的ul，返回的是一个数组，要写上[0]</p>
+</li>
+<li><p><strong>3. getAttribute</strong></p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a.href     //这样获取href，浏览器会给href加上http协议</span><br><span class="line">a.getAttribute(&apos;href&apos;)  //这样获取的才是href本身</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>4. target和currentTarget</strong></p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">liTags[i].onmouseenter = function (x) &#123;</span><br><span class="line">      console.log(x.target);       //x.target是我们操作的那个元素，若a里包含了个span，那操作的就是span</span><br><span class="line">      console.log(x.currentTarget) //x.currentTarget是我们监听的元素，就是liTags[i]这个元素</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>5. 选择器</strong></p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let a = document.querySelector(&apos;a[href=&quot;&apos; + id + &apos;&quot;]&apos;)</span><br><span class="line">//href外要包一个中括号，地址外要包一个双引号！并且变量id要和其他的用加号隔开</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>6. 儿子children</strong></p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var c = div.children;    //会获得div下的所有子标签</span><br><span class="line">var c = div.childNodes;  //会获得div下的所有子标签加文本标签</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>7. Siblings</strong><br>获取所有兄弟方法一：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var getSiblings = function (elem) &#123;</span><br><span class="line">var siblings = [];</span><br><span class="line">var sibling = elem.parentNode.firstChild;</span><br><span class="line">for (; sibling; sibling = sibling.nextSibling) &#123;</span><br><span class="line">	if (sibling.nodeType !== 1 || sibling === elem) continue;</span><br><span class="line">	    siblings.push(sibling);</span><br><span class="line">	&#125;</span><br><span class="line">	return siblings;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>获取所有兄弟方法二 用getSiblings()：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var elem = document.querySelector(&apos;#some-element&apos;);</span><br><span class="line">var siblings = getSiblings(elem);</span><br></pre></td></tr></table></figure></p>
+<p>注意：nextSibling如果有换行，会把换行当作下一个兄弟</p>
+<ul>
+<li><p><strong>8. nodeName()</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">document.body.nodeName    //&apos;BODY&apos;，body的节点名字，(除了svg，其他节点名字返回都是大写）</span><br><span class="line">document.documentElement.nodeName    //&apos;HTML&apos;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>9. cloneNode()</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var div2 = div1.cloneNode();  //会把div1本身复制给div2</span><br><span class="line">var div2 = div1.cloneNode(true);  //会把div1及它的所有子节点一起复制给div2，这句等于var div2=div1;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>10. isSameNode()和isEqualNode()</strong><br>isEqualNode检测内容是否相同<br>isSameNode检测两个元素是否是同一个节点</p>
+</li>
+<li><strong>11. removeChild()</strong><br>在页面里移除child节点，但是child在内存还是存在的</li>
+<li><strong>12. replaceChild()</strong><br>替换儿子，被替换的只是在页面里不见了，还是存在内存里的</li>
+<li><strong>13. normalize()</strong><br>将代码正常化 </li>
+<li><p><strong>14. innerText()和textContent()</strong></p>
+<p>  innerText是IE的私有实现,但也被除FF之外的浏览器所实现,textContent 则是w3c的标准API,现在IE9也实现了。</p>
+<p>   <strong>区别1：</strong>textContent会获取所有元素的内容，包括script和style标签里面的内容，innerText不会<br>   <strong>区别2：</strong>innerText不会返回隐藏元素的文本(像display:none)，但textContent会<br>  <strong>区别3：</strong>innerText会受CSS的影响，触发重排，而textContent不会，所以textContent快<br>但用这两个API赋值的时候，都会覆盖掉元素里原有的内容</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> div1.textContent = &apos;hello&apos;;  //这样div1里的东西都会被hello覆盖掉</span><br><span class="line">div1.appendChild(document.createTextNode(&apos;hello&apos;));  //这样就不会覆盖掉div1里的东西</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="3-Document-API"><a href="#3-Document-API" class="headerlink" title="3. Document API"></a>3. Document API</h1><ul>
+<li><p><strong>1.document.children</strong><br>[html]，document是html的爸爸</p>
+</li>
+<li><p><strong>2.document.documentElement</strong><br>就是html</p>
+</li>
+<li><p><strong>3.document.write</strong><br>尽量不用，若用在延时性和异步性的方法里，会把整个页面的内容覆盖掉</p>
+</li>
+<li><p><strong>4.querySelector()和querySelectorAll()</strong><br>querySelectorAll返回的是一个伪数组</p>
+</li>
+</ul>
+<h1 id="4-用JS完成页面内的跳转"><a href="#4-用JS完成页面内的跳转" class="headerlink" title="4. 用JS完成页面内的跳转"></a>4. 用JS完成页面内的跳转</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">let aTags = document.querySelectorAll(&apos;nav.menu &gt; ul &gt; li &gt; a&apos;);   //获取所有a标签，返回的是一个数组</span><br><span class="line">for(let i=0;i&lt;aTags.length;i++) &#123;     //因为aTags是数组，所以要用for循环，同时监听到数组里的所有元素</span><br><span class="line">    aTags[i].onclick = function (x) &#123; //监听a标签被鼠标点击的动作</span><br><span class="line">        x.preventDefault();           //防止默认动作（跳转）</span><br><span class="line">        let a = x.currentTarget;      //当前监听的元素a</span><br><span class="line">        let href = a.getAttribute(&apos;href&apos;);  //获取a的href值</span><br><span class="line">        let element = document.querySelector(href);  //获取带有这个href值的标签 例：&apos;#siteAbout&apos;</span><br><span class="line">        let top = element.offsetTop; //获取这个标签的底端到整个页面顶端的距离（固定值）</span><br><span class="line">        window.scrollTo(0,top);  //跳转window.scrollTo(x,y);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="5-console-log调试大法"><a href="#5-console-log调试大法" class="headerlink" title="5. console.log调试大法"></a>5. console.log调试大法</h1><p>出问题了就在每一步console.log，能解决很多问题</p>
+<h1 id="6-setInterval"><a href="#6-setInterval" class="headerlink" title="6. setInterval()"></a>6. setInterval()</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">let i=0;</span><br><span class="line">let say = setInterval(() =&gt; &#123;</span><br><span class="line">            if(i === 25)&#123;</span><br><span class="line">                window.clearInterval(say);      //调用setInterval的名字来停止它</span><br><span class="line">                return;</span><br><span class="line">            &#125;</span><br><span class="line">            i++;</span><br><span class="line">           console.log(i);    //从1报数到25，一秒一次，到25就停</span><br><span class="line">        &#125;,1000);</span><br></pre></td></tr></table></figure>
+<h1 id="7-Tween-js"><a href="#7-Tween-js" class="headerlink" title="7. Tween.js"></a>7. Tween.js</h1><p><a href="http://easings.net/zh-cn" target="_blank" rel="noopener">缓动动画速查表</a></p>
 <ol>
-<li><p>数组之间追加</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var array1 = [12 , &quot;foo&quot; , &#123;name &quot;Joe&quot;&#125; , -2458]; </span><br><span class="line">var array2 = [&quot;Doe&quot; , 555 , 100]; </span><br><span class="line">Array.prototype.push.apply(array1, array2); </span><br><span class="line">/* array1 值为  [12 , &quot;foo&quot; , &#123;name &quot;Joe&quot;&#125; , -2458 , &quot;Doe&quot; , 555 , 100] */</span><br></pre></td></tr></table></figure>
+<li>在<a href="cdnjs.com">cdn</a>里搜tween，并在html中引用</li>
+<li>在<a href="https://github.com/tweenjs/tween.js/" target="_blank" rel="noopener">github-tween</a>中查看使用教程</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/12/JS内存简介/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="梁光静">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="梁光静">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/12/JS内存简介/" itemprop="url">Js内存简介</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-12T22:56:14+08:00">
+                2018-08-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="/images/内存.png" alt="内存"></p>
+<h2 id="下面介绍浏览器里js的内存"><a href="#下面介绍浏览器里js的内存" class="headerlink" title="下面介绍浏览器里js的内存"></a>下面介绍浏览器里js的内存</h2><ol>
+<li><p>除了对象类型，其他类型的数据是直接存在stack里</p>
 </li>
-<li><p>获取数组中的最大值和最小值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var  numbers = [5, 458 , 120 , -215 ]; </span><br><span class="line">var maxInNumbers = Math.max.apply(Math, numbers),   //458</span><br><span class="line">    maxInNumbers = Math.max.call(Math,5, 458 , 120 , -215); //458</span><br></pre></td></tr></table></figure>
+<li><p>存对象的时候，将数据存在Heap（堆内存）里，并将数据在Heap中的位置信息存在stack（栈内存）里，由于Heap里存数据不是按顺序存的，所以很方便对象随时添加属性。当把对象赋给另一个对象时，是把这个对象的地址赋给它。<br>所以用对象时是引用的对象的地址，这种关系叫引用</p>
+</li>
+<li><p>8g的内存相当于 8 <em> 1024 </em> 1024 <em> 1024 </em> 8 =  6.87E10  bit<br>而64位二进制的数相当于 2^64^ = 1.84E19，所以64位二进制能用来存内存里的所有位置</p>
+</li>
+<li><p>数字是64位的，字符是16位的（ES3）</p>
 </li>
 </ol>
-<p>number 本身没有 max 方法，但是 Math 有，我们就可以借助 call 或者 apply 使用其方法。</p>
-<ol start="3">
-<li><p>验证是否是数组（前提是toString()方法没有被重写过）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">functionisArray(obj)&#123; </span><br><span class="line">    returnObject.prototype.toString.call(obj) === &apos;[object Array]&apos; ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>类（伪）数组使用数组方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var domNodes = Array.prototype.slice.call(document.getElementsByTagName(&quot;*&quot;));</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>Javascript中存在一种名为伪数组的对象结构。比较特别的是 arguments 对象，还有像调用 getElementsByTagName , document.childNodes 之类的，它们返回NodeList对象都属于伪数组。不能应用 Array下的 push , pop 等方法。<br>但是我们能通过 Array.prototype.slice.call 转换为真正的数组的带有 length 属性的对象，这样 domNodes 就可以应用 Array 下的所有方法了。</p>
-<h3 id="3-深入理解运用apply、call"><a href="#3-深入理解运用apply、call" class="headerlink" title="3.深入理解运用apply、call"></a>3.深入理解运用apply、call</h3><p>定义一个 log 方法，让它可以代理 console.log 方法，常见的解决方法是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function log(msg)　&#123;</span><br><span class="line">  console.log(msg);</span><br><span class="line">&#125;</span><br><span class="line">log(1);    //1</span><br><span class="line">log(1,2);    //1</span><br></pre></td></tr></table></figure></p>
-<p>上面方法可以解决最基本的需求，但是当传入参数的个数是不确定的时候，上面的方法就失效了，这个时候就可以考虑使用 apply 或者 call，注意这里传入多少个参数是不确定的，所以使用apply是最好的，方法如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function log()&#123;</span><br><span class="line">  console.log.apply(console, arguments);</span><br><span class="line">&#125;;</span><br><span class="line">log(1);    //1</span><br><span class="line">log(1,2);</span><br></pre></td></tr></table></figure></p>
-<p>接下来的要求是给每一个 log 消息添加一个”(app)”的前辍，比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">log(&quot;hello world&quot;);    //(app)hello world</span><br></pre></td></tr></table></figure></p>
-<p>该怎么做比较优雅呢?这个时候需要想到arguments参数是个伪数组，通过 Array.prototype.slice.call 转化为标准数组，再使用数组方法unshift，像这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function log()&#123;</span><br><span class="line">  var args = Array.prototype.slice.call(arguments);</span><br><span class="line">  args.unshift(&apos;(app)&apos;);</span><br><span class="line"> </span><br><span class="line">  console.log.apply(console, args);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<h3 id="4-bind"><a href="#4-bind" class="headerlink" title="4.bind"></a>4.bind</h3><p>说完了 apply 和 call ，再来说说bind。bind() 方法与 apply 和 call 很相似，也是可以改变函数体内 this 的指向。</p>
-<p>MDN的解释是：bind()方法会创建一个新函数，称为绑定函数，当调用这个绑定函数时，绑定函数会以创建它时传入 bind()方法的第一个参数作为 this，传入 bind() 方法的第二个以及以后的参数加上绑定函数运行时本身的参数按照顺序作为原函数的参数来调用原函数。</p>
-<p>直接来看看具体如何使用，在常见的单体模式中，通常我们会使用 _this , that , self 等保存 this ，这样我们可以在改变了上下文之后继续引用到它。 像这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var foo = &#123;</span><br><span class="line">    bar : 1,</span><br><span class="line">    eventBind: function()&#123;</span><br><span class="line">        var _this = this;</span><br><span class="line">        $(&apos;.someClass&apos;).on(&apos;click&apos;,function(event) &#123;</span><br><span class="line">            /* Act on the event */</span><br><span class="line">            console.log(_this.bar);     //1</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>由于 Javascript 特有的机制，上下文环境在 eventBind:function(){ } 过渡到 $(‘.someClass’).on(‘click’,function(event) { }) 发生了改变，上述使用变量保存 this 这些方式都是有用的，也没有什么问题。当然使用 bind() 可以更加优雅的解决这个问题：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var foo = &#123;</span><br><span class="line">    bar : 1,</span><br><span class="line">    eventBind: function()&#123;</span><br><span class="line">        $(&apos;.someClass&apos;).on(&apos;click&apos;,function(event) &#123;</span><br><span class="line">            /* Act on the event */</span><br><span class="line">            console.log(this.bar);      //1</span><br><span class="line">        &#125;.bind(this));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>在上述代码里，bind() 创建了一个函数，当这个click事件绑定在被调用的时候，它的 this 关键词会被设置成被传入的值（这里指调用bind()时传入的参数）。因此，这里我们传入想要的上下文 this(其实就是 foo )，到 bind() 函数中。然后，当回调函数被执行的时候， this 便指向 foo 对象。再来一个简单的栗子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var bar = function()&#123;</span><br><span class="line">    console.log(this.x);</span><br><span class="line">&#125;</span><br><span class="line">bar(); // undefined</span><br><span class="line">var func = bar.bind(foo);</span><br><span class="line">func(); // 3</span><br></pre></td></tr></table></figure></p>
-<p>这里我们创建了一个新的函数 func，当使用 bind() 创建一个绑定函数之后，它被执行的时候，它的 this 会被设置成 foo ， 而不是像我们调用 bar() 时的全局作用域。</p>
-<p>有个有趣的问题，如果连续 bind() 两次，亦或者是连续 bind() 三次那么输出的值是什么呢？像这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var bar = function()&#123;</span><br><span class="line">    console.log(this.x);</span><br><span class="line">&#125;</span><br><span class="line">var foo = &#123;</span><br><span class="line">    x:3</span><br><span class="line">&#125;</span><br><span class="line">var sed = &#123;</span><br><span class="line">    x:4</span><br><span class="line">&#125;</span><br><span class="line">var func = bar.bind(foo).bind(sed);</span><br><span class="line">func(); //?</span><br><span class="line"> </span><br><span class="line">var fiv = &#123;</span><br><span class="line">    x:5</span><br><span class="line">&#125;</span><br><span class="line">var func = bar.bind(foo).bind(sed).bind(fiv);</span><br><span class="line">func(); //?</span><br></pre></td></tr></table></figure></p>
-<p>答案是，两次都仍将输出 3 ，而非期待中的 4 和 5 。原因是，在Javascript中，多次 bind() 是无效的。更深层次的原因， bind() 的实现，相当于使用函数在内部包了一个 call / apply ，第二次 bind() 相当于再包住第一次 bind() ,故第二次以后的 bind 是无法生效的。</p>
-<h3 id="5-apply、call、bind比较"><a href="#5-apply、call、bind比较" class="headerlink" title="5.apply、call、bind比较"></a>5.apply、call、bind比较</h3><ol>
-<li>bind、call和apply方法的相同之处<br>前面我们已经说了call和apply的作用相同，区别就在参数的形式不同。bind方法的作用也是改变this的指向。bind方法的参数要求和call方法一样，第一个参数是函数执行上下文的对象，后面的参数可以是多个。<br>　　但bind又有自己的特别之处，下面来说说bind的用法上的区别：</li>
-<li>bind方法的用法上的区别</li>
-</ol>
-<ul>
-<li>区别一： bind()方法是会创建一个新函数，当调用这个新函数时，会以创建新函数时传入 bind()方法的第一个参数作为 this。<br>看栗子来体会：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var name=&apos;xxx&apos;; </span><br><span class="line">var obj = &#123;</span><br><span class="line">    name: &apos;yyy&apos;</span><br><span class="line">&#125;</span><br><span class="line">function func() &#123;</span><br><span class="line">    console.log(this.name);</span><br><span class="line">&#125;</span><br><span class="line">var func1 = func.bind(obj);</span><br><span class="line">func1();   //yyy</span><br><span class="line">func();     //xxx</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>func1等于通过bind方法创建的和func函数相同的新函数。func1的this对象为传入的obj，所以this.name就只等于obj对象的name值‘yyy’。<br>　　因为是新生成的函数，所以原来函数func()并不受影响，所以直接执行func()，this指向全局window，所以this.name为’xxx’。</p>
-<ul>
-<li><p>区别二： 参数的使用上，call方法是将第二个及之后的参数，作为实参传递到函数中。<br>　　而 bind() 方法的第二个以及以后的参数，再加上新函数运行时的参数，按照顺序作为实参传递到新函数中。<br>　　这样看文字解释，真的太绕了，直接看栗子，就很好理解：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function func(a, b, c) &#123;</span><br><span class="line">    console.log(a, b, c);</span><br><span class="line">&#125;</span><br><span class="line">var func1 = func.bind(null,&apos;aaa&apos;);</span><br><span class="line"></span><br><span class="line">func(&apos;A&apos;, &apos;B&apos;, &apos;C&apos;);            // A B C</span><br><span class="line">func1(&apos;A&apos;, &apos;B&apos;, &apos;C&apos;);           // aaa A B</span><br><span class="line">func1(&apos;B&apos;, &apos;C&apos;);                // aaa B C</span><br><span class="line">func.call(null, &apos;aaa&apos;);      // aaa undefined undefined</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>区别三：写法上，bind函数需要再加个()<br>最后一个不同，就是bind函数不是立即调用的，实现生成新的处理函数，然后再执行。而call和apply方法都是立即执行。<br>　　还是看栗子吧，改写下前面的例子：（一样的实现效果，不一样的执行写法）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var name=&apos;xxx&apos;; </span><br><span class="line">var obj = &#123;</span><br><span class="line">    name: &apos;yyy&apos;</span><br><span class="line">&#125;</span><br><span class="line">function func() &#123;</span><br><span class="line">    console.log(this.name);</span><br><span class="line">&#125;</span><br><span class="line">console.log(func.bind(obj());  //yyy</span><br><span class="line">console.log(func.call(obj));    //yyy</span><br><span class="line">console.log(func.apply(obj));  //yyy</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ol start="3">
-<li>bind方法常见的应用写法</li>
-</ol>
-<ul>
-<li>例子１：改变setTimeout()方法的this指向<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;button class=&quot;bindtest&quot;&gt;dianwo&lt;/button&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">    /*bind的用法--和使用var _this=this达到同样的目的*/</span><br><span class="line">        bindtest=document.querySelector(&apos;.bindtest&apos;)</span><br><span class="line">        bindtest.addEventListener(&apos;click&apos;,function()&#123;</span><br><span class="line">            console.log(this) //&lt;button class=&quot;domtest&quot;&gt;dianwo&lt;/button&gt;</span><br><span class="line">            setTimeout(function()&#123;</span><br><span class="line">                console.log(this)   //&lt;button class=&quot;domtest&quot;&gt;dianwo&lt;/button&gt;</span><br><span class="line">            &#125;.bind(this),300)</span><br><span class="line">        &#125;)</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>前面说了，bind的作用是得到一个新的函数，而新函数的this就是bind传递的第一个参数。这里bind方法是和setTimeout方法同级的，属于bindtest对象下的点击事件下的，所以this是 bindtest对象。</p>
-<ul>
-<li>例子２：字符串拼接的bind方法实现<br>　　前面call方法的使用例子中实现的字符串拼接，现在换成用bind方法来实现：<br>　　常见的是，比如我需要一个join操作，但是我没有这个方法，那么我就需要借助数组Array原型的join方法来借位使用。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function joinStr()&#123;</span><br><span class="line">      var joins=Array.prototype.join.bind(arguments);</span><br><span class="line">      console.log(joins(&apos;-&apos;))</span><br><span class="line">&#125;</span><br><span class="line">joinStr(&apos;a&apos;,&apos;b&apos;,&apos;c&apos;)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>例子中的写法等同于[‘a’,’b’,’c’].join(‘-‘)</p>
+<h2 id="5-面试题"><a href="#5-面试题" class="headerlink" title="5. 面试题"></a>5. 面试题</h2><p><strong>1.引用自身</strong></p>
+<p>错误实例：<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;self : a&#125;;     //这样a.self会是undefined</span><br><span class="line"></span><br><span class="line">上面这样等于</span><br><span class="line">var a;                  //undefined</span><br><span class="line">a.self = a              //这时a还是是undefined</span><br><span class="line">因为赋值时要先确定右边的</span><br></pre></td></tr></table></figure></p>
+<p>   正确写法：<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;&#125;;</span><br><span class="line">a.self = a;            //这样a.self就等于它自己</span><br></pre></td></tr></table></figure></p>
+<p><strong>2</strong><br><img src="/images/面试2.png" alt="面试2.png"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;n:1&#125;;</span><br><span class="line">var b = a;</span><br><span class="line">a.x = a = &#123;n:2&#125;   //这一行运行的时候最左的a地址已经确定为最开始的地址，于是先运行a = &#123;n:2&#125;，相当于给了a一个新地址，再运行a.x = a，相当于把新地址赋给了旧地址上对象一个x属性</span><br><span class="line"></span><br><span class="line">alert(a.x);       // undefined，然而有了新地址的a并没有x属性</span><br><span class="line">alert(b.x);       // [object,Object]，b是引用的a的旧地址，所以b有</span><br></pre></td></tr></table></figure>
+<p><strong>3. 垃圾、垃圾回收</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = function()&#123;&#125;;</span><br><span class="line">var a = null;</span><br><span class="line"></span><br><span class="line"> 这样上面那个function因为没有被任何东西引用，所以function占的内存就是垃圾，会被浏览器回收</span><br></pre></td></tr></table></figure></p>
+<p>下面是面试题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var fn = function()&#123;&#125;;</span><br><span class="line">document.body.onclick = fn;</span><br><span class="line">fn = null;</span><br></pre></td></tr></table></figure></p>
+<p>请问function是垃圾吗？<br>答案不是，因为<code>document.body.onclick = fn;</code>还在引用<br><img src="/images/面试3.png" alt="面试3"></p>
+<p>想要function变成垃圾可写<br><code>document.body.onclick = null;</code><br>附加：若是把页面关了，就相当于document不存在了，于是这时body、onclick、function都是垃圾，浏览器会把它们回收，但IE6不会把它们当作垃圾，IE6有bug！这就叫内存泄露，垃圾会占满内存，造成卡顿，解决办法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">window.onunload = function()&#123;</span><br><span class="line">    document.body.onclick=  null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/09/JavaScript原型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="梁光静">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="梁光静">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/09/JavaScript原型/" itemprop="url">JavaScript原型</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-09T12:47:25+08:00">
+                2018-08-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1-公用属性（就是原型）"><a href="#1-公用属性（就是原型）" class="headerlink" title="1. 公用属性（就是原型）"></a>1. 公用属性（就是原型）</h2><p>每个对象都有toString()、valueof()等方法，但他们并其实没有单独的方法，而是JS在每个对象里都存了一个隐藏属性：__proto__，这个属性指向了存放公用属性的地址(Object.prototype)，当用toString()时，就是调用的公用属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">o1.toString === o2.toString   //true</span><br></pre></td></tr></table></figure></p>
+<p>同时Number对象还有它特有公用属性，所以它比Object要多一个公用属性库，并且会先访问Number的原型（公用属性库），<strong>这一条链就叫原型链</strong>，像下图<img src="/images/原型链.png" alt="原型链"><br>同理，String、boolean也有自己的原型，但若平常没被引用的话会被当作垃圾回收，所以平常对象的原型是Object.prototype在引用，可得⬇️<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object.prototype === o1.__proto__     //true，是把prototype的地址赋给__proto__属性了</span><br></pre></td></tr></table></figure></p>
+<p>所以它们最终指向的Object的公有属性，就是Object.prototype（原型），Number、String的特有公有属性也是它们的prototype属性在引用，同理有<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Number.prototype.__proto__ === Object.prototype //true，是把Object.prototype的地址赋给Number的__proto__属性了</span><br><span class="line"></span><br><span class="line">var n1 = new Number(1);</span><br><span class="line">n1.__proto__ === Number.prototype    //true，是把Number.prototype的地址赋给n1的__proto__属性了</span><br><span class="line">n1.__proto__.__proto__ === Object.prototype  //true</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-proto-和prototype的区别"><a href="#2-proto-和prototype的区别" class="headerlink" title="2. __proto__和prototype的区别"></a>2. __proto__和prototype的区别</h2><p><img src="/images/原型.png" alt="原型.png"><br>打开浏览器就相当于生成了一个window，里面存了Number、String、Boolean、Object这几个对象，对象里的prototype属性里存了它们原型的地址，在你写：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var n = new Number(1);     //就会把Number.prototype里的地址放入n的__proto__属性里</span><br></pre></td></tr></table></figure></p>
+<p>这样用n就能调用Number的原型了</p>
+<p>总结：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var 对象 = new 函数();		//函数可以是Number/String/Boolean/Object</span><br><span class="line">对象.__proto__ === 函数.prototype    //true</span><br></pre></td></tr></table></figure></p>
+<p>__proto__是对象的属性，prototype是函数的属性</p>
+<p><strong>面试题</strong>：<code>&#39;1&#39;.__proto__</code>是什么？<br>答：’1’会临时转化为String对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;1&apos;.__proto__ === String.prototype    //true</span><br></pre></td></tr></table></figure></p>
+<p>所有对象都有__proto__属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Object.prototype.__proto__ === null;</span><br><span class="line"></span><br><span class="line">1.toString()     //语法错误，不加引号JS会把.当作小数点</span><br><span class="line">1..toString()    //&apos;1&apos;，第一个.当作小数点，第二个为点操作符</span><br></pre></td></tr></table></figure></p>
 
           
         
@@ -687,6 +1711,10 @@
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -730,7 +1758,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -743,7 +1771,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
