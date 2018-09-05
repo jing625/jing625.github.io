@@ -229,6 +229,135 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/05/canvas入门/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="梁光静">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="梁光静">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/05/canvas入门/" itemprop="url">canvas入门</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-05T20:44:48+08:00">
+                2018-09-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">//获取canvas标签</span><br><span class="line">var canvas = document.querySelector(&quot;#canvas&quot;);  </span><br><span class="line"></span><br><span class="line">//初始化</span><br><span class="line">var context = canvas.getContext(&apos;2d&apos;);  </span><br><span class="line"></span><br><span class="line">//画线</span><br><span class="line">function drawLine(x1,y1,x2,y2) &#123;</span><br><span class="line">    context.beginPath();</span><br><span class="line">    context.moveTo(x1-0,y1+29);  //起点</span><br><span class="line">    context.lineWidth = 5;  //线的粗细</span><br><span class="line">    context.lineTo(x2-0,y2+29);  //终点</span><br><span class="line">    context.stroke();  //将各个点练成线</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//画三角形</span><br><span class="line">function drawLine(x1,y1,x2,y2) &#123;</span><br><span class="line">    context.beginPath();</span><br><span class="line">    context.moveTo(x1,y1);  //起点</span><br><span class="line">    context.lineTo(x2,y2);  //第二个点</span><br><span class="line">    context.lineTo(x3,y3);  //第三个点</span><br><span class="line">    context.stroke();  //将各个点练成线</span><br><span class="line">    context.closePath();  //自动将第一个点和最后一个点连起来</span><br><span class="line">&#125;</span><br><span class="line">//画圆圈</span><br><span class="line">function drawTriangle(x,y,r) &#123;</span><br><span class="line">    context.beginPath();</span><br><span class="line">    context.arc(x-0,y+29,r,0,Math.PI*2);  //left，top，半径， 起点（以原点为圆心从第一象限的x轴开始往y轴负方向画圈），终点</span><br><span class="line">    context.fill();  //将圆圈填色</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">context.strokeStyle = &apos;black&apos;;  //线的颜色</span><br><span class="line">context.fillStyle = &apos;black&apos;;  //圆圈填充的颜色</span><br><span class="line">context.clearRect(x,y,30,30);  //橡皮擦功能</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><a href="https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_canvas_arc" target="_blank" rel="noopener">arc的参数自己试</a></p>
+<ol start="2">
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function setCanvasSize() &#123;</span><br><span class="line">  //获取用户界面的宽高</span><br><span class="line">  var pageWidth = document.documentElement.clientWidth;</span><br><span class="line">  var pageHeight = document.documentElement.clientHeight;</span><br><span class="line">  //赋给画板</span><br><span class="line">  canvas.width = pageWidth;</span><br><span class="line">  canvas.height = pageHeight;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//触屏设备</span><br><span class="line">canvas.ontouchstart = function(ev)&#123;</span><br><span class="line">  var x = ev.touches[0].clientX;  //获取点击的位置</span><br><span class="line">  var y = ev.touches[0].clientY;</span><br><span class="line">&#125;  //监听手指点击事件</span><br><span class="line">canvas.ontouchmove = function()&#123;&#125;  //监听手指移动事件</span><br><span class="line"></span><br><span class="line">//非触屏设备</span><br><span class="line">canvas.onmousedown = function(ev)&#123;&#125;</span><br><span class="line">canvas.onmousemove = function (ev) &#123;&#125;</span><br><span class="line">canvas.onmouseup = function () &#123;&#125;</span><br><span class="line">canvas.onmouseout = function () &#123;&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/02/什么是闭包-闭包的用途/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1576,145 +1705,6 @@ f() // 2
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/12/JS内存简介/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="梁光静">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="梁光静">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/12/JS内存简介/" itemprop="url">Js内存简介</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-12T22:56:14+08:00">
-                2018-08-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="/images/内存.png" alt="内存"></p>
-<h2 id="下面介绍浏览器里js的内存"><a href="#下面介绍浏览器里js的内存" class="headerlink" title="下面介绍浏览器里js的内存"></a>下面介绍浏览器里js的内存</h2><ol>
-<li><p>除了对象类型，其他类型的数据是直接存在stack里</p>
-</li>
-<li><p>存对象的时候，将数据存在Heap（堆内存）里，并将数据在Heap中的位置信息存在stack（栈内存）里，由于Heap里存数据不是按顺序存的，所以很方便对象随时添加属性。当把对象赋给另一个对象时，是把这个对象的地址赋给它。<br>所以用对象时是引用的对象的地址，这种关系叫引用</p>
-</li>
-<li><p>8g的内存相当于 8 <em> 1024 </em> 1024 <em> 1024 </em> 8 =  6.87E10  bit<br>而64位二进制的数相当于 2^64^ = 1.84E19，所以64位二进制能用来存内存里的所有位置</p>
-</li>
-<li><p>数字是64位的，字符是16位的（ES3）</p>
-</li>
-</ol>
-<h2 id="5-面试题"><a href="#5-面试题" class="headerlink" title="5. 面试题"></a>5. 面试题</h2><p><strong>1.引用自身</strong></p>
-<p>错误实例：<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;self : a&#125;;     //这样a.self会是undefined</span><br><span class="line"></span><br><span class="line">上面这样等于</span><br><span class="line">var a;                  //undefined</span><br><span class="line">a.self = a              //这时a还是是undefined</span><br><span class="line">因为赋值时要先确定右边的</span><br></pre></td></tr></table></figure></p>
-<p>   正确写法：<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;&#125;;</span><br><span class="line">a.self = a;            //这样a.self就等于它自己</span><br></pre></td></tr></table></figure></p>
-<p><strong>2</strong><br><img src="/images/面试2.png" alt="面试2.png"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;n:1&#125;;</span><br><span class="line">var b = a;</span><br><span class="line">a.x = a = &#123;n:2&#125;   //这一行运行的时候最左的a地址已经确定为最开始的地址，于是先运行a = &#123;n:2&#125;，相当于给了a一个新地址，再运行a.x = a，相当于把新地址赋给了旧地址上对象一个x属性</span><br><span class="line"></span><br><span class="line">alert(a.x);       // undefined，然而有了新地址的a并没有x属性</span><br><span class="line">alert(b.x);       // [object,Object]，b是引用的a的旧地址，所以b有</span><br></pre></td></tr></table></figure>
-<p><strong>3. 垃圾、垃圾回收</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = function()&#123;&#125;;</span><br><span class="line">var a = null;</span><br><span class="line"></span><br><span class="line"> 这样上面那个function因为没有被任何东西引用，所以function占的内存就是垃圾，会被浏览器回收</span><br></pre></td></tr></table></figure></p>
-<p>下面是面试题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var fn = function()&#123;&#125;;</span><br><span class="line">document.body.onclick = fn;</span><br><span class="line">fn = null;</span><br></pre></td></tr></table></figure></p>
-<p>请问function是垃圾吗？<br>答案不是，因为<code>document.body.onclick = fn;</code>还在引用<br><img src="/images/面试3.png" alt="面试3"></p>
-<p>想要function变成垃圾可写<br><code>document.body.onclick = null;</code><br>附加：若是把页面关了，就相当于document不存在了，于是这时body、onclick、function都是垃圾，浏览器会把它们回收，但IE6不会把它们当作垃圾，IE6有bug！这就叫内存泄露，垃圾会占满内存，造成卡顿，解决办法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">window.onunload = function()&#123;</span><br><span class="line">    document.body.onclick=  null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1765,7 +1755,7 @@ f() // 2
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

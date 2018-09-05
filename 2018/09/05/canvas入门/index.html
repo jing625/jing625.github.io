@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="闭包," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,18 +79,17 @@
 
 
 
-<meta name="description" content="闭包什么是闭包1234567function 函数()&amp;#123;    var 变量  = 1；    function 内部函数()&amp;#123;        console.log(变量);    &amp;#125;    return 内部函数;&amp;#125; 上面的例子中  内部函数 + 变量（内部函数能访问到这个变量） =  闭包 return  内部函数只是为了能使用到这个内部函数 ， 也就">
-<meta name="keywords" content="闭包">
+<meta name="description" content="12345678910111213141516171819202122232425262728293031323334//获取canvas标签var canvas = document.querySelector(&amp;quot;#canvas&amp;quot;);  //初始化var context = canvas.getContext(&amp;apos;2d&amp;apos;);  //画线function d">
 <meta property="og:type" content="article">
-<meta property="og:title" content="闭包">
-<meta property="og:url" content="http://yoursite.com/2018/09/02/什么是闭包-闭包的用途/index.html">
+<meta property="og:title" content="canvas入门">
+<meta property="og:url" content="http://yoursite.com/2018/09/05/canvas入门/index.html">
 <meta property="og:site_name" content="梁光静">
-<meta property="og:description" content="闭包什么是闭包1234567function 函数()&amp;#123;    var 变量  = 1；    function 内部函数()&amp;#123;        console.log(变量);    &amp;#125;    return 内部函数;&amp;#125; 上面的例子中  内部函数 + 变量（内部函数能访问到这个变量） =  闭包 return  内部函数只是为了能使用到这个内部函数 ， 也就">
+<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334//获取canvas标签var canvas = document.querySelector(&amp;quot;#canvas&amp;quot;);  //初始化var context = canvas.getContext(&amp;apos;2d&amp;apos;);  //画线function d">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-02T14:49:30.000Z">
+<meta property="og:updated_time" content="2018-09-05T12:55:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="闭包">
-<meta name="twitter:description" content="闭包什么是闭包1234567function 函数()&amp;#123;    var 变量  = 1；    function 内部函数()&amp;#123;        console.log(变量);    &amp;#125;    return 内部函数;&amp;#125; 上面的例子中  内部函数 + 变量（内部函数能访问到这个变量） =  闭包 return  内部函数只是为了能使用到这个内部函数 ， 也就">
+<meta name="twitter:title" content="canvas入门">
+<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031323334//获取canvas标签var canvas = document.querySelector(&amp;quot;#canvas&amp;quot;);  //初始化var context = canvas.getContext(&amp;apos;2d&amp;apos;);  //画线function d">
 
 
 
@@ -120,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/02/什么是闭包-闭包的用途/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/05/canvas入门/"/>
 
 
 
 
 
-  <title>闭包 | 梁光静</title>
+  <title>canvas入门 | 梁光静</title>
   
 
 
@@ -233,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/02/什么是闭包-闭包的用途/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/05/canvas入门/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="梁光静">
@@ -250,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">闭包</h1>
+          <h1 class="post-title" itemprop="name headline">canvas入门</h1>
         
 
         <div class="post-meta">
@@ -262,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-02T21:37:09+08:00">
-                2018-09-02
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-05T20:44:48+08:00">
+                2018-09-05
               </time>
             
 
@@ -300,22 +299,16 @@
       
 
       
-        <h1 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h1><h2 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function 函数()&#123;</span><br><span class="line">    var 变量  = 1；</span><br><span class="line">    function 内部函数()&#123;</span><br><span class="line">        console.log(变量);</span><br><span class="line">    &#125;</span><br><span class="line">    return 内部函数;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上面的例子中</p>
-<ul>
-<li>内部函数 + 变量（内部函数能访问到这个变量） =  闭包</li>
-<li>return  内部函数只是为了能使用到这个内部函数 ， 也就是能使用闭包</li>
-<li>函数套函数是为了隐藏一个变量 或者说这就是闭包的作用</li>
-</ul>
-<h2 id="闭包的作用"><a href="#闭包的作用" class="headerlink" title="闭包的作用"></a>闭包的作用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">function create()</span><br><span class="line">&#123;</span><br><span class="line">  var n=999;</span><br><span class="line">  return &#123;</span><br><span class="line">    set : function(aaa)&#123;</span><br><span class="line">        n = aaa;</span><br><span class="line">    &#125;,</span><br><span class="line">    get : function()&#123;</span><br><span class="line">        return n;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var a = create();</span><br><span class="line">var b = create();</span><br><span class="line">a.set(2);</span><br><span class="line">console.log(a.get());</span><br><span class="line">console.log(b.get());</span><br></pre></td></tr></table></figure>
-<ul>
-<li>闭包的作用就是间接的访问一个变量 ，隐藏一个变量</li>
-<li>去掉那个外层函数  变量就会很容易被直接使用并且修改</li>
-<li>n 是一个局部变量 ，在函数外面是使用不到这个变量的</li>
-<li>这时候get 和 set  函数就是 用来间接访问这个变量的访问器</li>
-<li>闭包和变量的作用域有关</li>
-</ul>
-<p>在我们写js代码的时候会很容易就出现闭包， 而不是我们经常有意的去创造闭包<br>引用维基百科：闭包（Closure）是词法闭包（Lexical Closure）的简称，是引用了自由变量的函数。这个被引用的自由变量将和这个函数一同存在，即使已经离开了创造它的环境也不例外。</p>
+        <ol>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">//获取canvas标签</span><br><span class="line">var canvas = document.querySelector(&quot;#canvas&quot;);  </span><br><span class="line"></span><br><span class="line">//初始化</span><br><span class="line">var context = canvas.getContext(&apos;2d&apos;);  </span><br><span class="line"></span><br><span class="line">//画线</span><br><span class="line">function drawLine(x1,y1,x2,y2) &#123;</span><br><span class="line">    context.beginPath();</span><br><span class="line">    context.moveTo(x1-0,y1+29);  //起点</span><br><span class="line">    context.lineWidth = 5;  //线的粗细</span><br><span class="line">    context.lineTo(x2-0,y2+29);  //终点</span><br><span class="line">    context.stroke();  //将各个点练成线</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//画三角形</span><br><span class="line">function drawLine(x1,y1,x2,y2) &#123;</span><br><span class="line">    context.beginPath();</span><br><span class="line">    context.moveTo(x1,y1);  //起点</span><br><span class="line">    context.lineTo(x2,y2);  //第二个点</span><br><span class="line">    context.lineTo(x3,y3);  //第三个点</span><br><span class="line">    context.stroke();  //将各个点练成线</span><br><span class="line">    context.closePath();  //自动将第一个点和最后一个点连起来</span><br><span class="line">&#125;</span><br><span class="line">//画圆圈</span><br><span class="line">function drawTriangle(x,y,r) &#123;</span><br><span class="line">    context.beginPath();</span><br><span class="line">    context.arc(x-0,y+29,r,0,Math.PI*2);  //left，top，半径， 起点（以原点为圆心从第一象限的x轴开始往y轴负方向画圈），终点</span><br><span class="line">    context.fill();  //将圆圈填色</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">context.strokeStyle = &apos;black&apos;;  //线的颜色</span><br><span class="line">context.fillStyle = &apos;black&apos;;  //圆圈填充的颜色</span><br><span class="line">context.clearRect(x,y,30,30);  //橡皮擦功能</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><a href="https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_canvas_arc" target="_blank" rel="noopener">arc的参数自己试</a></p>
+<ol start="2">
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function setCanvasSize() &#123;</span><br><span class="line">  //获取用户界面的宽高</span><br><span class="line">  var pageWidth = document.documentElement.clientWidth;</span><br><span class="line">  var pageHeight = document.documentElement.clientHeight;</span><br><span class="line">  //赋给画板</span><br><span class="line">  canvas.width = pageWidth;</span><br><span class="line">  canvas.height = pageHeight;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//触屏设备</span><br><span class="line">canvas.ontouchstart = function(ev)&#123;</span><br><span class="line">  var x = ev.touches[0].clientX;  //获取点击的位置</span><br><span class="line">  var y = ev.touches[0].clientY;</span><br><span class="line">&#125;  //监听手指点击事件</span><br><span class="line">canvas.ontouchmove = function()&#123;&#125;  //监听手指移动事件</span><br><span class="line"></span><br><span class="line">//非触屏设备</span><br><span class="line">canvas.onmousedown = function(ev)&#123;&#125;</span><br><span class="line">canvas.onmousemove = function (ev) &#123;&#125;</span><br><span class="line">canvas.onmouseup = function () &#123;&#125;</span><br><span class="line">canvas.onmouseout = function () &#123;&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
 
       
     </div>
@@ -331,12 +324,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/闭包/" rel="tag"># 闭包</a>
-          
-        </div>
-      
 
       
       
@@ -346,8 +333,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/31/cookie、session、localStorage入门/" rel="next" title="cookie、 session、localStorage入门">
-                <i class="fa fa-chevron-left"></i> cookie、 session、localStorage入门
+              <a href="/2018/09/02/什么是闭包-闭包的用途/" rel="next" title="闭包">
+                <i class="fa fa-chevron-left"></i> 闭包
               </a>
             
           </div>
@@ -355,10 +342,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/05/canvas入门/" rel="prev" title="canvas入门">
-                canvas入门 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -410,17 +393,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -471,22 +445,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#闭包"><span class="nav-number">1.</span> <span class="nav-text">闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是闭包"><span class="nav-number">1.1.</span> <span class="nav-text">什么是闭包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包的作用"><span class="nav-number">1.2.</span> <span class="nav-text">闭包的作用</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

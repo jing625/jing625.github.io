@@ -229,6 +229,145 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/12/JS内存简介/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="梁光静">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="梁光静">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/12/JS内存简介/" itemprop="url">Js内存简介</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-12T22:56:14+08:00">
+                2018-08-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="/images/内存.png" alt="内存"></p>
+<h2 id="下面介绍浏览器里js的内存"><a href="#下面介绍浏览器里js的内存" class="headerlink" title="下面介绍浏览器里js的内存"></a>下面介绍浏览器里js的内存</h2><ol>
+<li><p>除了对象类型，其他类型的数据是直接存在stack里</p>
+</li>
+<li><p>存对象的时候，将数据存在Heap（堆内存）里，并将数据在Heap中的位置信息存在stack（栈内存）里，由于Heap里存数据不是按顺序存的，所以很方便对象随时添加属性。当把对象赋给另一个对象时，是把这个对象的地址赋给它。<br>所以用对象时是引用的对象的地址，这种关系叫引用</p>
+</li>
+<li><p>8g的内存相当于 8 <em> 1024 </em> 1024 <em> 1024 </em> 8 =  6.87E10  bit<br>而64位二进制的数相当于 2^64^ = 1.84E19，所以64位二进制能用来存内存里的所有位置</p>
+</li>
+<li><p>数字是64位的，字符是16位的（ES3）</p>
+</li>
+</ol>
+<h2 id="5-面试题"><a href="#5-面试题" class="headerlink" title="5. 面试题"></a>5. 面试题</h2><p><strong>1.引用自身</strong></p>
+<p>错误实例：<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;self : a&#125;;     //这样a.self会是undefined</span><br><span class="line"></span><br><span class="line">上面这样等于</span><br><span class="line">var a;                  //undefined</span><br><span class="line">a.self = a              //这时a还是是undefined</span><br><span class="line">因为赋值时要先确定右边的</span><br></pre></td></tr></table></figure></p>
+<p>   正确写法：<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;&#125;;</span><br><span class="line">a.self = a;            //这样a.self就等于它自己</span><br></pre></td></tr></table></figure></p>
+<p><strong>2</strong><br><img src="/images/面试2.png" alt="面试2.png"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;n:1&#125;;</span><br><span class="line">var b = a;</span><br><span class="line">a.x = a = &#123;n:2&#125;   //这一行运行的时候最左的a地址已经确定为最开始的地址，于是先运行a = &#123;n:2&#125;，相当于给了a一个新地址，再运行a.x = a，相当于把新地址赋给了旧地址上对象一个x属性</span><br><span class="line"></span><br><span class="line">alert(a.x);       // undefined，然而有了新地址的a并没有x属性</span><br><span class="line">alert(b.x);       // [object,Object]，b是引用的a的旧地址，所以b有</span><br></pre></td></tr></table></figure>
+<p><strong>3. 垃圾、垃圾回收</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = function()&#123;&#125;;</span><br><span class="line">var a = null;</span><br><span class="line"></span><br><span class="line"> 这样上面那个function因为没有被任何东西引用，所以function占的内存就是垃圾，会被浏览器回收</span><br></pre></td></tr></table></figure></p>
+<p>下面是面试题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var fn = function()&#123;&#125;;</span><br><span class="line">document.body.onclick = fn;</span><br><span class="line">fn = null;</span><br></pre></td></tr></table></figure></p>
+<p>请问function是垃圾吗？<br>答案不是，因为<code>document.body.onclick = fn;</code>还在引用<br><img src="/images/面试3.png" alt="面试3"></p>
+<p>想要function变成垃圾可写<br><code>document.body.onclick = null;</code><br>附加：若是把页面关了，就相当于document不存在了，于是这时body、onclick、function都是垃圾，浏览器会把它们回收，但IE6不会把它们当作垃圾，IE6有bug！这就叫内存泄露，垃圾会占满内存，造成卡顿，解决办法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">window.onunload = function()&#123;</span><br><span class="line">    document.body.onclick=  null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/09/JavaScript原型/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1540,167 +1679,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/20/CSS-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="梁光静">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="梁光静">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/20/CSS-1/" itemprop="url">CSS</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-20T11:37:08+08:00">
-                2018-07-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><h2 id="引入css的4种方法"><a href="#引入css的4种方法" class="headerlink" title="引入css的4种方法"></a>引入css的4种方法</h2><ol>
-<li>style 属性<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;height:100px;background-color: red;&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<div style="height:100px;background-color: red;"></div>
-
-<ol start="2">
-<li>style 标签<br>在head标签内容中添加<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">  &lt;title&gt;JS Bin&lt;/title&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line"> div&#123;</span><br><span class="line">    height: 100px;</span><br><span class="line">    background-color: red;</span><br><span class="line">  &#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<div style="height:100px;background-color: red;"></div>
-
-<ol start="3">
-<li><p>link 标签引入<br>i 创建一个a.css文件 ，并添加内容</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line"> height: 100px;</span><br><span class="line"> background-color: red;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<p> ii 在head中添加 </p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;a.css&quot;&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<ol start="4">
-<li>import<br> 该方法是在一个css文件中引入另一个css文件，语法为 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@import url(&quot;b.css&quot;)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<pre><code>（以下观点属个人理解）
-</code></pre><h2 id="水平布局"><a href="#水平布局" class="headerlink" title="水平布局"></a>水平布局</h2><h3 id="导航栏"><a href="#导航栏" class="headerlink" title="导航栏"></a>导航栏</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">  &lt;title&gt;JS Bin&lt;/title&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">    a&#123;</span><br><span class="line">      text-decoration:none;</span><br><span class="line">    &#125;</span><br><span class="line">    ul&#123;</span><br><span class="line">      list-style-type: none;</span><br><span class="line">    &#125;</span><br><span class="line">    ul&gt;li&#123;</span><br><span class="line">      float:left;</span><br><span class="line">      margin:20px;</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;nav&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;HOME&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;ABOUT&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;CONTACT&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">  &lt;/nav&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2018/04/09/5acb3337aa951.png" alt="导航栏.png"></p>
-<p>在导航条下面加一个div<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">      width: 100px;</span><br><span class="line">      height: 100px;</span><br><span class="line">      background-color: grey;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="未清除浮动效果"><a href="#未清除浮动效果" class="headerlink" title="未清除浮动效果"></a>未清除浮动效果</h3><p><img src="https://i.loli.net/2018/04/10/5acc1bb8afc89.png" alt="未清楚浮动.png"></p>
-<h3 id="清楚浮动效果"><a href="#清楚浮动效果" class="headerlink" title="清楚浮动效果"></a>清楚浮动效果</h3><p><img src="https://i.loli.net/2018/04/10/5acc207970cc2.png" alt="2018-04-10 10-24-12 的屏幕截图.png"></p>
-<ul>
-<li>所以在给元素添加float后都有可能带来一些问题 ，所以我们需要清除浮动带来的影响。</li>
-<li>清除浮动的办法有很多种，我们只用以下一种方法<br>i 给浮动元素的父元素的类  加  <code>clearfix</code><br>ii <code>clearfix</code> 的css代码具体实现<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.clearfix::after&#123;</span><br><span class="line">     content:&apos;&apos;;</span><br><span class="line">     display:block;</span><br><span class="line">     clear:both;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="垂直布局"><a href="#垂直布局" class="headerlink" title="垂直布局"></a>垂直布局</h2><h3 id="个人理解"><a href="#个人理解" class="headerlink" title="个人理解"></a>个人理解</h3><p> 整个网页就是在做一个垂直布局 ， 而水平布局就是在整体的纵向垂直布局上做一块内容的横向水平布局</p>
-<h3 id="各块的垂直布局"><a href="#各块的垂直布局" class="headerlink" title="各块的垂直布局"></a>各块的垂直布局</h3><p><img src="https://i.loli.net/2018/04/10/5acc25c1a9055.png" alt="2018-04-10 10-45-56 的屏幕截图.png"></p>
-<ul>
-<li>可以看到导航栏部分和所有div做整体的垂直布局</li>
-<li>而导航栏这一块里面又做了水平布局</li>
-<li>所以  我觉得浏览器的布局就是整体在做垂直布局，但是又有水平布局组合的复杂布局</li>
-</ul>
-<h2 id="实用且好用的工具推荐"><a href="#实用且好用的工具推荐" class="headerlink" title="实用且好用的工具推荐"></a>实用且好用的工具推荐</h2><p><a href="https://c.m.163.com/news/a/DDJFF6P905118DFD.html?spss=newsapp&amp;fromhistory=1" target="_blank" rel="noopener">工具推荐</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1751,7 +1729,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
