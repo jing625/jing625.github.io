@@ -229,6 +229,161 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/23/CSS宽高的决定/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="梁光静">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="梁光静">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/23/CSS宽高的决定/" itemprop="url">CSS-元素宽高是由什么决定的</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-23T20:41:54+08:00">
+                2018-07-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="CSS-元素宽高是由什么决定的"><a href="#CSS-元素宽高是由什么决定的" class="headerlink" title="CSS-元素宽高是由什么决定的"></a>CSS-元素宽高是由什么决定的</h1><blockquote>
+<p> 任何元素都可以是块级元素 或 行内元素<br> 因为每个元素都可以设置成行内元素或块级元素   </p>
+</blockquote>
+<h2 id="行内元素表现形式"><a href="#行内元素表现形式" class="headerlink" title="行内元素表现形式"></a>行内元素表现形式</h2><p><img src="https://ws1.sinaimg.cn/large/006WOZytgy1fqb3v2gjhvj309e01eq2q.jpg" alt=""><br>代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;span&gt;hello! &lt;/span&gt;</span><br><span class="line">&lt;span&gt;hello! &lt;/span&gt;</span><br><span class="line">&lt;span&gt;hello! &lt;/span&gt;</span><br><span class="line">&lt;span&gt;hello! &lt;/span&gt;</span><br><span class="line">&lt;span&gt;hello! &lt;/span&gt;</span><br><span class="line">&lt;span&gt;hello! &lt;/span&gt;</span><br><span class="line">&lt;span&gt;hello! &lt;/span&gt;</span><br><span class="line">&lt;span&gt;hello! &lt;/span&gt;</span><br><span class="line">&lt;span&gt;hello! &lt;/span&gt;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>行内元素就是在一行中显示，如果后面跟着的还是行内元素，就继续跟在后面显示，当一行不够显示时自动换行</li>
+</ul>
+<h2 id="块级元素表现形式"><a href="#块级元素表现形式" class="headerlink" title="块级元素表现形式"></a>块级元素表现形式</h2><p><img src="https://ws1.sinaimg.cn/large/006WOZytgy1fqb423gjnaj309u02igld.jpg" alt=""><br>代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;border: 1px solid red;&quot;&gt;123&lt;/div&gt;</span><br><span class="line">  &lt;div style=&quot;border: 1px solid red;&quot;&gt;123&lt;/div&gt;</span><br><span class="line">  &lt;div style=&quot;border: 1px solid red;&quot;&gt;123&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>块级元素不管后面跟着的是什么元素，都会另起一行。也就是说块级元素会独占一行。<h2 id="元素的高度由什么决定的"><a href="#元素的高度由什么决定的" class="headerlink" title="元素的高度由什么决定的"></a>元素的高度由什么决定的</h2><h3 id="span-行内元素高度由什么决定的"><a href="#span-行内元素高度由什么决定的" class="headerlink" title="span 行内元素高度由什么决定的"></a>span 行内元素高度由什么决定的</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">  &lt;title&gt;JS Bin&lt;/title&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">    div&#123;</span><br><span class="line">      border: 1px solid blue;</span><br><span class="line">    &#125;</span><br><span class="line">    span&#123;</span><br><span class="line">      border: 1px solid red;</span><br><span class="line">      font-size: 72px;</span><br><span class="line">    &#125;</span><br><span class="line">    .s1&#123;</span><br><span class="line">       font-family: sans-serif;  </span><br><span class="line">    &#125;</span><br><span class="line">    .s2&#123;</span><br><span class="line">       font-family: monospace;</span><br><span class="line">    &#125;</span><br><span class="line">    .s3&#123;</span><br><span class="line">      font-family:serif ;</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">  &lt;span class=&quot;s1&quot;&gt;ABC&lt;/span&gt;</span><br><span class="line">  &lt;span class=&quot;s2&quot;&gt;ABC&lt;/span&gt;</span><br><span class="line">  &lt;span class=&quot;s3&quot;&gt;ABC&lt;/span&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="https://ws1.sinaimg.cn/large/006WOZytgy1fqb4g6bbdmj30fr02yt8r.jpg" alt=""></p>
+<ul>
+<li>可以看到， 我给每个span 都设置了一个字体， 而中间字体的高度明显高于两边的字体 。</li>
+<li>每一种字体的设计师不一样， 每一种字体的设计师都会对自己设置出来的字体的默认行高不一样</li>
+<li>所以，行内元素内容为字的元素的行高是由 字体的默认行高决定的。  </li>
+<li>比较详细的解说可以看看这篇知乎文章<a href="https://zhuanlan.zhihu.com/p/27381252" target="_blank" rel="noopener">字号与行高</a></li>
+</ul>
+<h3 id="div-块级元素高度由什么决定的"><a href="#div-块级元素高度由什么决定的" class="headerlink" title="div 块级元素高度由什么决定的"></a>div 块级元素高度由什么决定的</h3><ul>
+<li>从上面的程序代码可以看到， span是由一个div包裹的 。 div的告诉是中间最高的span的高度。</li>
+<li>也就是说块级元素的高度是由它的内容决定的，而且是所有内容中最高的内容决定的。</li>
+</ul>
+<h2 id="元素的宽度是由什么决定的"><a href="#元素的宽度是由什么决定的" class="headerlink" title="元素的宽度是由什么决定的"></a>元素的宽度是由什么决定的</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">  &lt;title&gt;JS Bin&lt;/title&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">    div&#123;</span><br><span class="line">      border: 1px solid blue;</span><br><span class="line">      font-size: 72px;</span><br><span class="line">    &#125;</span><br><span class="line">    span&#123;</span><br><span class="line">      border: 1px solid red;</span><br><span class="line">      font-size: 72px;</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;span&gt;12345678&lt;/span&gt;</span><br><span class="line">    &lt;div&gt;12345678&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws1.sinaimg.cn/large/006WOZytgy1fqb50ogjyyj30g805jwep.jpg" alt=""></p>
+<ul>
+<li>行内元素的宽度是由它的内容决定的，行内元素不能设置宽高</li>
+<li><p>块级元素当没有设置宽度是默认100%宽 ，所以才会到最右边。当设置了宽度是就是固定的宽度 ， 下面我们把宽度设置为200px；<br><img src="https://ws1.sinaimg.cn/large/006WOZytgy1fqb5600a8aj30fc04q3yp.jpg" alt=""></p>
+</li>
+<li><p>看div的蓝色边框 ， 宽度就是固定的200px;</p>
+</li>
+<li><p>如果把div设置成行内元素，  它的宽度是怎样的呢,设置属性display:inline<br><img src="https://ws1.sinaimg.cn/large/006WOZytgy1fqb5itt1v9j30fu04vdg0.jpg" alt=""></p>
+</li>
+<li><p>div的宽度会收缩</p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/20/CSS-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1660,7 +1815,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
