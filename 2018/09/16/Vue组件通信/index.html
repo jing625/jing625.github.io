@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="1. DOM事件模型 冒泡 捕获 如果这个元素是被点击元素，那么执行顺序由监听顺序决定  2. 移动端的触摸事件 123456789//说明触摸开始document.body.ontouchstart !== undefined//触摸开始移动canvas.ontouchmove = function (ev) &amp;#123;  var x = ev.touches[0].clientX;  //触">
+<meta name="description" content="Vue组件之间的通信主要归为如下形式：父子组件之间的通信任意两个组件之间的通信（父子组件通信，爷孙组件通信，兄弟组件通信）最终的boss，Vuex-状态管理模式由繁到简，我们可以首先探讨一下父子之间的通信 1.子组件想改父组件的1父组件传属性给子组件，子组件发事件给父组件，父组件再传属性给子组件，如此循环。            父:给你元钱                        那给你加">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DOM面试">
-<meta property="og:url" content="http://yoursite.com/2018/08/25/DOM面试/index.html">
+<meta property="og:title" content="Vue组件通信">
+<meta property="og:url" content="http://yoursite.com/2018/09/16/Vue组件通信/index.html">
 <meta property="og:site_name" content="梁光静">
-<meta property="og:description" content="1. DOM事件模型 冒泡 捕获 如果这个元素是被点击元素，那么执行顺序由监听顺序决定  2. 移动端的触摸事件 123456789//说明触摸开始document.body.ontouchstart !== undefined//触摸开始移动canvas.ontouchmove = function (ev) &amp;#123;  var x = ev.touches[0].clientX;  //触">
+<meta property="og:description" content="Vue组件之间的通信主要归为如下形式：父子组件之间的通信任意两个组件之间的通信（父子组件通信，爷孙组件通信，兄弟组件通信）最终的boss，Vuex-状态管理模式由繁到简，我们可以首先探讨一下父子之间的通信 1.子组件想改父组件的1父组件传属性给子组件，子组件发事件给父组件，父组件再传属性给子组件，如此循环。            父:给你元钱                        那给你加">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-02T14:14:04.000Z">
+<meta property="og:updated_time" content="2018-09-16T14:13:59.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DOM面试">
-<meta name="twitter:description" content="1. DOM事件模型 冒泡 捕获 如果这个元素是被点击元素，那么执行顺序由监听顺序决定  2. 移动端的触摸事件 123456789//说明触摸开始document.body.ontouchstart !== undefined//触摸开始移动canvas.ontouchmove = function (ev) &amp;#123;  var x = ev.touches[0].clientX;  //触">
+<meta name="twitter:title" content="Vue组件通信">
+<meta name="twitter:description" content="Vue组件之间的通信主要归为如下形式：父子组件之间的通信任意两个组件之间的通信（父子组件通信，爷孙组件通信，兄弟组件通信）最终的boss，Vuex-状态管理模式由繁到简，我们可以首先探讨一下父子之间的通信 1.子组件想改父组件的1父组件传属性给子组件，子组件发事件给父组件，父组件再传属性给子组件，如此循环。            父:给你元钱                        那给你加">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/25/DOM面试/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/16/Vue组件通信/"/>
 
 
 
 
 
-  <title>DOM面试 | 梁光静</title>
+  <title>Vue组件通信 | 梁光静</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/25/DOM面试/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/16/Vue组件通信/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="梁光静">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">DOM面试</h1>
+          <h1 class="post-title" itemprop="name headline">Vue组件通信</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-25T23:50:25+08:00">
-                2018-08-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-16T22:06:08+08:00">
+                2018-09-16
               </time>
             
 
@@ -299,22 +299,22 @@
       
 
       
-        <h1 id="1-DOM事件模型"><a href="#1-DOM事件模型" class="headerlink" title="1. DOM事件模型"></a>1. <a href="https://www.jianshu.com/p/7054b1abb431" target="_blank" rel="noopener">DOM事件模型</a></h1><ol>
-<li>冒泡</li>
-<li>捕获</li>
-<li><a href="http://jsbin.com/raqakog/1/edit?js,console,output" target="_blank" rel="noopener">如果这个元素是被点击元素，那么执行顺序由监听顺序决定</a></li>
-</ol>
-<h1 id="2-移动端的触摸事件"><a href="#2-移动端的触摸事件" class="headerlink" title="2. 移动端的触摸事件"></a>2. 移动端的触摸事件</h1><ol>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//说明触摸开始</span><br><span class="line">document.body.ontouchstart !== undefined</span><br><span class="line">//触摸开始移动</span><br><span class="line">canvas.ontouchmove = function (ev) &#123;</span><br><span class="line">  var x = ev.touches[0].clientX;  //触摸的x坐标</span><br><span class="line">  var y = ev.touches[0].clientY;</span><br><span class="line">&#125;</span><br><span class="line">ontouchend  //触摸结束</span><br><span class="line">ontouchcancel  //触摸取消，因为有的浏览器不会触发touchend事件</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>模拟swipe事件（滑动）<br>记录两次touchmove的位置差，若后一次在前一次的右边，说明向右滑了</p>
-</li>
-</ol>
-<h1 id="3-事件委托"><a href="#3-事件委托" class="headerlink" title="3. 事件委托"></a>3. 事件委托</h1><ol>
-<li>监听父元素，看被触发的是哪个儿子，就是事件委托，委托父亲监听儿子</li>
-<li>优点是可以监听动态生成的儿子，减少了事件处理程序的数量，整个页面占用的内存空间会更少。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">function listen(element,eventType,selector,fn)&#123;</span><br><span class="line">  element.addEventListener(eventType,(e)=&gt;&#123;</span><br><span class="line">    let el = e.target</span><br><span class="line">    while(!el.matches(selector))&#123;  //可能点击的是li里的span  </span><br><span class="line">      if(element === el)&#123;  //如果点击的是父元素，则跳出监听</span><br><span class="line">        el =null</span><br><span class="line">        break</span><br><span class="line">      &#125;</span><br><span class="line">      el = el.parentNode</span><br><span class="line">    &#125;</span><br><span class="line">    el&amp;&amp;fn.call(el,e,el)</span><br><span class="line">  &#125;)</span><br><span class="line">  return element</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//&lt;ul id=&quot;list&quot;&gt;</span><br><span class="line">//  &lt;li&gt;&lt;/li&gt;</span><br><span class="line">//  ...</span><br><span class="line">//&lt;/ul&gt;</span><br><span class="line">//let list=document.querySelector(&apos;#list&apos;)</span><br><span class="line">//listen(list,&apos;click&apos;,&apos;li&apos;,()=&gt;&#123;&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
+        <p>Vue组件之间的通信主要归为如下形式：<br>父子组件之间的通信<br>任意两个组件之间的通信（父子组件通信，爷孙组件通信，兄弟组件通信）<br>最终的boss，Vuex-状态管理模式<br>由繁到简，我们可以首先探讨一下父子之间的通信</p>
+<h4 id="1-子组件想改父组件的"><a href="#1-子组件想改父组件的" class="headerlink" title="1.子组件想改父组件的"></a>1.子组件想改父组件的<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">父组件传属性给子组件，子组件发事件给父组件，父组件再传属性给子组件，如此循环。</span><br></pre></td></tr></table></figure></h4><p><template><br>    <div class="parent"><br>        <p>父:给你元钱</p><br>        <kid :money=" money" @repay="repay"></kid><br>        <br><br>        <button @click="add">那给你加100</button><br>        <p v-if="back" @repay="repay">子：超过500我不要元</p><br>    </div><br></template></p>
+<p><script><br>export default {<br>    name: ‘parent’,<br>    data () {<br>        return {<br>            money: 100,<br>            back: 0<br>        }<br>    },<br>    components:{ kid },<br>    methods:{<br>        repay (back) {<br>            this.back = back<br>        },<br>        add(){<br>            this.money += 100;<br>        }<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#### 2.爷孙组件间的通信</span><br><span class="line">本质：两次父子间通信</span><br><span class="line">- 情形一：爷爷控制孙子</span><br></pre></td></tr></table></figure></p>
+<p>&lt;!DOCTYPE html&gt;</p>
+<p><html></p>
+<p><head><br>  <meta charset="utf-8"><br>  <meta name="viewport" content="width=device-width"><br>  <title>JS Bin</title><br>  <script src="https://cdn.bootcss.com/vue/2.5.13/vue.min.js"></script><br>  <script src="https://cdn.bootcss.com/vuex/3.0.1/vuex.min.js"></script><br>  <script src="https://cdn.bootcss.com/vue-router/3.0.1/vue-router.min.js"></script><br></p>
+<p><body><br>  <div id="app"><br>    <p></p><br>    <button @click="xxx = true">打开</button><br>    <hr><br>    <child :visible="xxx" @close="log"></child><br>  </div> </body></p>
+<p><br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">Vue.component(&apos;child&apos;, &#123;</span><br><span class="line">  props: [&apos;visible&apos;],</span><br><span class="line">  template: `</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      我是儿子</span><br><span class="line">      </span><br><span class="line">      &lt;grand-child v-show=&quot;visible&quot; @close=&quot;$emit(&apos;close&apos;)&quot;&gt;&lt;/grand-child&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  `</span><br><span class="line">&#125;)</span><br><span class="line">Vue.component(&apos;grandChild&apos;, &#123;</span><br><span class="line">  template: `</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      我是孙子</span><br><span class="line">      &lt;button @click=&quot;$emit(&apos;close&apos;)&quot;&gt;关闭&lt;/button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&#125;)</span><br><span class="line">new Vue(&#123;</span><br><span class="line">  el: &apos;#app&apos;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: &apos;我是爷爷&apos;,</span><br><span class="line">    xxx: false,</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    log() &#123;</span><br><span class="line">      console.log(&apos;爷爷收到消息&apos;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>情形二：孙子向上一层一层通知爷爷<br><a href="http://jsbin.com/sobajafazo/edit?html,js,output" target="_blank" rel="noopener">示例</a><h4 id="3-兄弟组件之间的通信"><a href="#3-兄弟组件之间的通信" class="headerlink" title="3.兄弟组件之间的通信"></a>3.兄弟组件之间的通信</h4>想要在两个兄弟组件之间通信，需要一个中间的桥梁，那么在这里我们可以使用 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">创建一个Vue对象</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>// bus.js<br>export default new Vue();<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">使用```$on```进行监听</span><br></pre></td></tr></table></figure></p>
+<p>import Bus from ‘../bus.js’;<br>export default {<br>  ready() {<br>    Bus.$on(‘loadSuccess’, text =&gt; {<br>      this.show = true;<br>      this.status = ‘loadSuccess’<br>      if (text) {<br>        this.text = text;<br>      }<br>    })<br>  },<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">使用```$emit```触发事件</span><br></pre></td></tr></table></figure></p>
+<p>ajax({<br>  url: Config.API_ADDRESS_ADD,<br>  type: ‘post’,<br>  dataType: ‘json’,<br>  data: data<br>}).then((data)=&gt;{<br>    Bus.$emit(‘loadSuccess’, ‘添加成功！’);<br>}).catch((data)=&gt; {<br>})<br><code>使用</code>$once<code>注册，触发之后即被销毁。
+使用</code>$off<code>`</code>解绑事件</p>
+<p>以上就是Vue组件通信的几种形式，另外，当项目比较大，通信比较复杂时，我们可以考虑使用Vuex 。</p>
 
       
     </div>
@@ -339,8 +339,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/25/DOM事件/" rel="next" title="DOM事件">
-                <i class="fa fa-chevron-left"></i> DOM事件
+              <a href="/2018/09/14/VueRouter入门/" rel="next" title="VueRouter入门">
+                <i class="fa fa-chevron-left"></i> VueRouter入门
               </a>
             
           </div>
@@ -348,10 +348,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/28/自己封装AJAX/" rel="prev" title="自己封装AJAX">
-                自己封装AJAX <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -474,7 +470,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-DOM事件模型"><span class="nav-number">1.</span> <span class="nav-text">1. DOM事件模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-移动端的触摸事件"><span class="nav-number">2.</span> <span class="nav-text">2. 移动端的触摸事件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-事件委托"><span class="nav-number">3.</span> <span class="nav-text">3. 事件委托</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-子组件想改父组件的"><span class="nav-number">1.</span> <span class="nav-text">1.子组件想改父组件的1父组件传属性给子组件，子组件发事件给父组件，父组件再传属性给子组件，如此循环。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-兄弟组件之间的通信"><span class="nav-number">2.</span> <span class="nav-text">3.兄弟组件之间的通信</span></a></li></ol></div>
             
 
           </div>
