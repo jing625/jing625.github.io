@@ -229,6 +229,125 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/18/自己实现简易版Promise/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="梁光静">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="梁光静">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/18/自己实现简易版Promise/" itemprop="url">自己实现简易版Promise</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-18T23:26:34+08:00">
+                2019-02-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">function Promise(fn)&#123;</span><br><span class="line">    var status = &apos;pending&apos;</span><br><span class="line">    function successNotify()&#123;</span><br><span class="line">        status = &apos;resolved&apos;</span><br><span class="line">        toDoThen.apply(undefined, arguments)</span><br><span class="line">    &#125;</span><br><span class="line">    function failNotify()&#123;</span><br><span class="line">        status = &apos;rejected&apos;</span><br><span class="line">        toDoThen.apply(undefined, arguments)</span><br><span class="line">    &#125;</span><br><span class="line">    function toDoThen()&#123;</span><br><span class="line">        setTimeout(()=&gt;&#123; // 保证回调是异步执行的</span><br><span class="line">            if(status === &apos;resolved&apos;)&#123;</span><br><span class="line">                for(let i =0; i&lt; successArray.length;i ++)    &#123;</span><br><span class="line">                    successArray[i].apply(undefined, arguments)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;else if(status === &apos;rejected&apos;)&#123;</span><br><span class="line">                for(let i =0; i&lt; failArray.length;i ++)    &#123;</span><br><span class="line">                    failArray[i].apply(undefined, arguments)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    var successArray = []</span><br><span class="line">    var failArray = []</span><br><span class="line">    fn.call(undefined, successNotify, failNotify)</span><br><span class="line">    return &#123;</span><br><span class="line">        then: function(successFn, failFn)&#123;</span><br><span class="line">            successArray.push(successFn)</span><br><span class="line">            failArray.push(failFn)</span><br><span class="line">            return undefined // 简化</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/04/JavaScript实现各种排序算法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1525,141 +1644,6 @@ export default {
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/25/DOM面试/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="梁光静">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="梁光静">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/25/DOM面试/" itemprop="url">DOM面试</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-25T23:50:25+08:00">
-                2018-08-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="1-DOM事件模型"><a href="#1-DOM事件模型" class="headerlink" title="1. DOM事件模型"></a>1. <a href="https://www.jianshu.com/p/7054b1abb431" target="_blank" rel="noopener">DOM事件模型</a></h1><ol>
-<li>冒泡</li>
-<li>捕获</li>
-<li><a href="http://jsbin.com/raqakog/1/edit?js,console,output" target="_blank" rel="noopener">如果这个元素是被点击元素，那么执行顺序由监听顺序决定</a></li>
-</ol>
-<h1 id="2-移动端的触摸事件"><a href="#2-移动端的触摸事件" class="headerlink" title="2. 移动端的触摸事件"></a>2. 移动端的触摸事件</h1><ol>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//说明触摸开始</span><br><span class="line">document.body.ontouchstart !== undefined</span><br><span class="line">//触摸开始移动</span><br><span class="line">canvas.ontouchmove = function (ev) &#123;</span><br><span class="line">  var x = ev.touches[0].clientX;  //触摸的x坐标</span><br><span class="line">  var y = ev.touches[0].clientY;</span><br><span class="line">&#125;</span><br><span class="line">ontouchend  //触摸结束</span><br><span class="line">ontouchcancel  //触摸取消，因为有的浏览器不会触发touchend事件</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>模拟swipe事件（滑动）<br>记录两次touchmove的位置差，若后一次在前一次的右边，说明向右滑了</p>
-</li>
-</ol>
-<h1 id="3-事件委托"><a href="#3-事件委托" class="headerlink" title="3. 事件委托"></a>3. 事件委托</h1><ol>
-<li>监听父元素，看被触发的是哪个儿子，就是事件委托，委托父亲监听儿子</li>
-<li>优点是可以监听动态生成的儿子，减少了事件处理程序的数量，整个页面占用的内存空间会更少。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">function listen(element,eventType,selector,fn)&#123;</span><br><span class="line">  element.addEventListener(eventType,(e)=&gt;&#123;</span><br><span class="line">    let el = e.target</span><br><span class="line">    while(!el.matches(selector))&#123;  //可能点击的是li里的span  </span><br><span class="line">      if(element === el)&#123;  //如果点击的是父元素，则跳出监听</span><br><span class="line">        el =null</span><br><span class="line">        break</span><br><span class="line">      &#125;</span><br><span class="line">      el = el.parentNode</span><br><span class="line">    &#125;</span><br><span class="line">    el&amp;&amp;fn.call(el,e,el)</span><br><span class="line">  &#125;)</span><br><span class="line">  return element</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//&lt;ul id=&quot;list&quot;&gt;</span><br><span class="line">//  &lt;li&gt;&lt;/li&gt;</span><br><span class="line">//  ...</span><br><span class="line">//&lt;/ul&gt;</span><br><span class="line">//let list=document.querySelector(&apos;#list&apos;)</span><br><span class="line">//listen(list,&apos;click&apos;,&apos;li&apos;,()=&gt;&#123;&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1710,7 +1694,7 @@ export default {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
