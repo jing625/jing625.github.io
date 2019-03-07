@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="12345678910111213141516171819202122232425262728293031323334//获取canvas标签var canvas = document.querySelector(&amp;quot;#canvas&amp;quot;);  //初始化var context = canvas.getContext(&amp;apos;2d&amp;apos;);  //画线function d">
+<meta name="description" content="1.线性搜索(顺序搜索)假设一个数组中有n个元素，最好的情况就是要寻找的特定值就是数组里的第一个元素，这样仅需要1次比较就可以。而最坏的情况是要寻找的特定值不在这个数组或者是数组里的最后一个元素，这就需要进行n次比较。  实现方式1234567891011function linearSearch(arr, value) &amp;#123;  for(let i = 0; i &amp;lt; arr.leng">
 <meta property="og:type" content="article">
-<meta property="og:title" content="canvas入门">
-<meta property="og:url" content="http://yoursite.com/2018/09/05/canvas入门/index.html">
+<meta property="og:title" content="JavaScript实现各种选择算法">
+<meta property="og:url" content="http://yoursite.com/2019/03/07/JS实现各种选择算法/index.html">
 <meta property="og:site_name" content="梁光静">
-<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334//获取canvas标签var canvas = document.querySelector(&amp;quot;#canvas&amp;quot;);  //初始化var context = canvas.getContext(&amp;apos;2d&amp;apos;);  //画线function d">
+<meta property="og:description" content="1.线性搜索(顺序搜索)假设一个数组中有n个元素，最好的情况就是要寻找的特定值就是数组里的第一个元素，这样仅需要1次比较就可以。而最坏的情况是要寻找的特定值不在这个数组或者是数组里的最后一个元素，这就需要进行n次比较。  实现方式1234567891011function linearSearch(arr, value) &amp;#123;  for(let i = 0; i &amp;lt; arr.leng">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-05T12:55:02.000Z">
+<meta property="og:updated_time" content="2019-03-07T13:05:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="canvas入门">
-<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031323334//获取canvas标签var canvas = document.querySelector(&amp;quot;#canvas&amp;quot;);  //初始化var context = canvas.getContext(&amp;apos;2d&amp;apos;);  //画线function d">
+<meta name="twitter:title" content="JavaScript实现各种选择算法">
+<meta name="twitter:description" content="1.线性搜索(顺序搜索)假设一个数组中有n个元素，最好的情况就是要寻找的特定值就是数组里的第一个元素，这样仅需要1次比较就可以。而最坏的情况是要寻找的特定值不在这个数组或者是数组里的最后一个元素，这就需要进行n次比较。  实现方式1234567891011function linearSearch(arr, value) &amp;#123;  for(let i = 0; i &amp;lt; arr.leng">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/05/canvas入门/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/03/07/JS实现各种选择算法/"/>
 
 
 
 
 
-  <title>canvas入门 | 梁光静</title>
+  <title>JavaScript实现各种选择算法 | 梁光静</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/05/canvas入门/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/07/JS实现各种选择算法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="梁光静">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">canvas入门</h1>
+          <h1 class="post-title" itemprop="name headline">JavaScript实现各种选择算法</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-05T20:44:48+08:00">
-                2018-09-05
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-07T20:34:15+08:00">
+                2019-03-07
               </time>
             
 
@@ -299,16 +299,16 @@
       
 
       
-        <ol>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">//获取canvas标签</span><br><span class="line">var canvas = document.querySelector(&quot;#canvas&quot;);  </span><br><span class="line"></span><br><span class="line">//初始化</span><br><span class="line">var context = canvas.getContext(&apos;2d&apos;);  </span><br><span class="line"></span><br><span class="line">//画线</span><br><span class="line">function drawLine(x1,y1,x2,y2) &#123;</span><br><span class="line">    context.beginPath();</span><br><span class="line">    context.moveTo(x1-0,y1+29);  //起点</span><br><span class="line">    context.lineWidth = 5;  //线的粗细</span><br><span class="line">    context.lineTo(x2-0,y2+29);  //终点</span><br><span class="line">    context.stroke();  //将各个点练成线</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//画三角形</span><br><span class="line">function drawLine(x1,y1,x2,y2) &#123;</span><br><span class="line">    context.beginPath();</span><br><span class="line">    context.moveTo(x1,y1);  //起点</span><br><span class="line">    context.lineTo(x2,y2);  //第二个点</span><br><span class="line">    context.lineTo(x3,y3);  //第三个点</span><br><span class="line">    context.stroke();  //将各个点练成线</span><br><span class="line">    context.closePath();  //自动将第一个点和最后一个点连起来</span><br><span class="line">&#125;</span><br><span class="line">//画圆圈</span><br><span class="line">function drawTriangle(x,y,r) &#123;</span><br><span class="line">    context.beginPath();</span><br><span class="line">    context.arc(x-0,y+29,r,0,Math.PI*2);  //left，top，半径， 起点（以原点为圆心从第一象限的x轴开始往y轴负方向画圈），终点</span><br><span class="line">    context.fill();  //将圆圈填色</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">context.strokeStyle = &apos;black&apos;;  //线的颜色</span><br><span class="line">context.fillStyle = &apos;black&apos;;  //圆圈填充的颜色</span><br><span class="line">context.clearRect(x,y,30,30);  //橡皮擦功能</span><br></pre></td></tr></table></figure>
+        <h4 id="1-线性搜索-顺序搜索"><a href="#1-线性搜索-顺序搜索" class="headerlink" title="1.线性搜索(顺序搜索)"></a>1.线性搜索(顺序搜索)</h4><p>假设一个数组中有n个元素，最好的情况就是要寻找的特定值就是数组里的第一个元素，这样仅需要1次比较就可以。而最坏的情况是要寻找的特定值不在这个数组或者是数组里的最后一个元素，这就需要进行n次比较。</p>
+<ul>
+<li>实现方式<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function linearSearch(arr, value) &#123;</span><br><span class="line">  for(let i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">    if(arr[i] === value) &#123;</span><br><span class="line">      return i</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return -1</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let arr = [9, 1, -3, 4, 2, 7]</span><br><span class="line">let index = linearSearch(arr, 2)</span><br></pre></td></tr></table></figure>
 </li>
-</ol>
-<p><a href="https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_canvas_arc" target="_blank" rel="noopener">arc的参数自己试</a></p>
-<ol start="2">
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function setCanvasSize() &#123;</span><br><span class="line">  //获取用户界面的宽高</span><br><span class="line">  var pageWidth = document.documentElement.clientWidth;</span><br><span class="line">  var pageHeight = document.documentElement.clientHeight;</span><br><span class="line">  //赋给画板</span><br><span class="line">  canvas.width = pageWidth;</span><br><span class="line">  canvas.height = pageHeight;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</ul>
+<h5 id="线性搜索优化"><a href="#线性搜索优化" class="headerlink" title="线性搜索优化"></a>线性搜索优化</h5><p>现实中很多查找遵循2-8原则，查找也类似。即我们80%的场景下查找的其实只是全部数据种20%的数据。根据这个原则，我们在每次查找时把找到的元素向前移动一位，这样经过多次查找后，最常查询的数据会移动到最前面，顺序查找时更容易找到。</p>
+<ul>
+<li>实现方式<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function linearSearch(arr, value) &#123;</span><br><span class="line">  for(let i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">    if(arr[i] === value) &#123;</span><br><span class="line">      if(i &gt; 0 ) &#123;</span><br><span class="line">        [arr[i-1], arr[i]] = [arr[i], arr[i-1]]  //让第 i 项和第 i-1 项交换位置</span><br><span class="line">      &#125;</span><br><span class="line">      return i</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return -1</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let arr = [9, 1, -3, 4, 2, 7]</span><br><span class="line">let index = linearSearch(arr, 5)</span><br></pre></td></tr></table></figure>
 </li>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//触屏设备</span><br><span class="line">canvas.ontouchstart = function(ev)&#123;</span><br><span class="line">  var x = ev.touches[0].clientX;  //获取点击的位置</span><br><span class="line">  var y = ev.touches[0].clientY;</span><br><span class="line">&#125;  //监听手指点击事件</span><br><span class="line">canvas.ontouchmove = function()&#123;&#125;  //监听手指移动事件</span><br><span class="line"></span><br><span class="line">//非触屏设备</span><br><span class="line">canvas.onmousedown = function(ev)&#123;&#125;</span><br><span class="line">canvas.onmousemove = function (ev) &#123;&#125;</span><br><span class="line">canvas.onmouseup = function () &#123;&#125;</span><br><span class="line">canvas.onmouseout = function () &#123;&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
+</ul>
 
       
     </div>
@@ -333,8 +333,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/02/什么是闭包-闭包的用途/" rel="next" title="闭包">
-                <i class="fa fa-chevron-left"></i> 闭包
+              <a href="/2019/02/18/自己实现简易版Promise/" rel="next" title="自己实现简易版Promise">
+                <i class="fa fa-chevron-left"></i> 自己实现简易版Promise
               </a>
             
           </div>
@@ -342,10 +342,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/07/let 相关面试题/" rel="prev" title="let相关面试题">
-                let相关面试题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -397,8 +393,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -449,6 +454,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-线性搜索-顺序搜索"><span class="nav-number">1.</span> <span class="nav-text">1.线性搜索(顺序搜索)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#线性搜索优化"><span class="nav-number">1.1.</span> <span class="nav-text">线性搜索优化</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
