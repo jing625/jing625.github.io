@@ -229,6 +229,138 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/07/JS数据类型的转换/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="梁光静">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="梁光静">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/07/JS数据类型的转换/" itemprop="url">JS数据类型的转换</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-07T14:06:01+08:00">
+                2018-08-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1-转换成number"><a href="#1-转换成number" class="headerlink" title="1. 转换成number"></a>1. 转换成number</h2><h4 id="官方："><a href="#官方：" class="headerlink" title="官方："></a>官方：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Number(&apos;1&apos;)       //     1</span><br><span class="line"></span><br><span class="line">parseInt(&apos;1&apos;)     //     1  </span><br><span class="line">parseInt是面试重点  parseInt(&apos;011&apos;) === 11，这是十进制</span><br><span class="line">要在后面加8才是八进制 parseInt(&apos;011&apos;,8) === 9</span><br><span class="line">parseInt(&apos;s&apos;) === NaN</span><br><span class="line">parseInt(&apos;1s&apos;) === 1</span><br><span class="line"></span><br><span class="line">parseFloat(&apos;1.23&apos;)//     1.23</span><br></pre></td></tr></table></figure>
+<h4 id="老司机："><a href="#老司机：" class="headerlink" title="老司机："></a>老司机：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&apos;1&apos; - 0 === 1              //最常见</span><br><span class="line">&apos;1.23&apos; - 0 === 1.23        //最常见</span><br><span class="line"></span><br><span class="line">+&apos;1&apos; === 1</span><br><span class="line">+&apos;1.23&apos; === 1.23</span><br><span class="line">+&apos;.2&apos; === 0.2</span><br><span class="line">+&apos;-1&apos; === -1</span><br><span class="line"></span><br><span class="line">-&apos;-1&apos; === 1</span><br></pre></td></tr></table></figure>
+<h2 id="2-转换成string"><a href="#2-转换成string" class="headerlink" title="2. 转换成string"></a>2. 转换成string</h2><h4 id="官方：-1"><a href="#官方：-1" class="headerlink" title="官方："></a>官方：</h4><ol>
+<li>number、boolean类型可通过toString方法转换成字符串</li>
+<li>symbol不能用toString方法</li>
+<li>undefined、null不能用toString方法，会报错 </li>
+<li>object类型用toString只能转换出<code>&#39;[object Object]&#39;</code></li>
+<li>把上述toString()改成String()也一样，但String()能转换null和undefined<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(1).toString();        //     &apos;1&apos;</span><br><span class="line">true.toString();       //     &apos;true&apos;</span><br><span class="line">null.toString();       //      error:Cannot read property &apos;toString&apos; of null</span><br><span class="line">undefined.toString();  //      error:Cannot read property &apos;toString&apos; of undefined</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="老司机：-1"><a href="#老司机：-1" class="headerlink" title="老司机："></a>老司机：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1 + &apos;&apos;       // &apos;1&apos;</span><br><span class="line">true + &apos;&apos;       // &apos;true&apos;</span><br><span class="line">null + &apos;&apos;       // &apos;null&apos;</span><br><span class="line">undefined + &apos;&apos;       // &apos;undefined&apos;</span><br><span class="line"></span><br><span class="line">var obj = &#123;&#125;;</span><br><span class="line">obj + &apos;&apos;       // &apos;[object Object]&apos;</span><br><span class="line"></span><br><span class="line">1 + &apos;1&apos; 等于 (1).toString + &apos;1&apos;      //   &apos;11&apos;</span><br></pre></td></tr></table></figure>
+<h2 id="3-转换成boolean"><a href="#3-转换成boolean" class="headerlink" title="3. 转换成boolean"></a>3. 转换成boolean</h2><h4 id="官方：-2"><a href="#官方：-2" class="headerlink" title="官方："></a>官方：</h4><p>总共只有6个falsy值，0、NaN、’’、null、undefined，<strong>除了这6个，其它值都是true。所有对象都是true，包括var n = new Boolean(false)，n也是true</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Boolean(1)          //        true</span><br><span class="line">Boolean(2)          //        true</span><br><span class="line">Boolean(0)          //        false</span><br><span class="line">Boolean(NaN)        //        false</span><br><span class="line"></span><br><span class="line">Boolean(&apos;&apos;)         //        空字符串false</span><br><span class="line">Boolean(&apos; &apos;)        //        空格字符串true</span><br><span class="line"></span><br><span class="line">Boolean(null)       //        false</span><br><span class="line"></span><br><span class="line">Boolean(undefined)  //        false</span><br><span class="line"></span><br><span class="line">Boolean(&#123;&#125;)         //        空对象true</span><br><span class="line">Boolean([])         //        空数组true</span><br></pre></td></tr></table></figure></p>
+<h4 id="老司机：-2"><a href="#老司机：-2" class="headerlink" title="老司机："></a>老司机：</h4><p>取反两次，总共只有6个falsy值，0、NaN、’’、null、undefined，<strong>除了这6个，其它值都是true。所有对象都是true，包括var n = new Boolean(false)，n也是true</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">!!1          //        true</span><br><span class="line">!!0          //        false</span><br><span class="line">!!NaN        //        false</span><br><span class="line"></span><br><span class="line">!!&apos;&apos;         //        false</span><br><span class="line">!!&apos; &apos;        //        true</span><br><span class="line"></span><br><span class="line">!!&#123;&#125;         //        true</span><br><span class="line"></span><br><span class="line">!!null       //        false</span><br><span class="line"></span><br><span class="line">!!undefined  //        false</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/06/数据结构入门/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1606,153 +1738,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/13/HTML/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="梁光静">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="梁光静">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/13/HTML/" itemprop="url">HTML</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-13T23:21:32+08:00">
-                2018-07-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><h2 id="W3C"><a href="#W3C" class="headerlink" title="W3C"></a>W3C</h2><h3 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h3><blockquote>
-<p>万维网联盟（W3C）由蒂姆·伯纳斯-李于1994年10月离开欧洲核子研究中心（CERN）后成立。<br>该组织试图通过W3C制定的新标准来促进业界成员间的兼容性和协议。不兼容的HTML版本由不同的供应商提供，导致网页显示方式不一致。联盟试图让所有的供应商实施一套由联盟选择的核心原则和组件。</p>
-</blockquote>
-<h3 id="标准"><a href="#标准" class="headerlink" title="标准"></a>标准</h3><blockquote>
-<p>为解决网络应用中不同平台、技术和开发者带来的不兼容问题，保障网络信息的顺利和完整流通，万维网联盟制定了一系列标准并督促网络应用开发者和内容提供者遵循这些标准。标准的内容包括使用语言的规范，开发中使用的导则和解释引擎的行为等等。W3C也制定了包括XML和CSS等的众多影响深远的标准规范。</p>
-</blockquote>
-<blockquote>
-<p>但是，W3C制定的网络标准似乎并非强制而只是推荐标准。因此部分网站仍然不能完全实现这些标准。特别是使用早期所见即所得网页编辑软件设计的网页往往会包含大量非标准代码。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">-  -W3C推荐标准</span><br><span class="line">CSS：层叠样式表</span><br><span class="line">DOM：文档对象模型</span><br><span class="line">HTML：超文本标记语言</span><br><span class="line">RDF：资源描述框架</span><br><span class="line">SMIL：同步多媒体集成语言</span><br><span class="line">SVG：可缩放向量图形</span><br><span class="line">WAI</span><br><span class="line">Widgets</span><br><span class="line">XHTML：可扩展超文本标记语言</span><br><span class="line">XML：可扩展标记语言</span><br></pre></td></tr></table></figure>
-<h2 id="MDN"><a href="#MDN" class="headerlink" title="MDN"></a>MDN</h2><ul>
-<li>MDN Web Docs 是一个汇集众多Mozilla基金会产品和网络技术开发文档的免费网站</li>
-<li>该项目始于2005年，最初由Mozilla公司员工Deb Richardson领导。自2006年以来，文档工作由Eric Shepherd领导</li>
-<li><ul>
-<li>关于前端的一些技术都可以先从MDN中搜索了解，比如一些HTML标签的使用，CSS属性的使用等</li>
-</ul>
-</li>
-</ul>
-<h2 id="HTML-1"><a href="#HTML-1" class="headerlink" title="HTML"></a>HTML</h2><h3 id="MDN链接"><a href="#MDN链接" class="headerlink" title="MDN链接"></a>MDN链接</h3><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element" target="_blank" rel="noopener">HTML All Tags ,MDN</a></p>
-<h2 id="空标签"><a href="#空标签" class="headerlink" title="空标签"></a>空标签</h2><h3 id="什么是空标签？"><a href="#什么是空标签？" class="headerlink" title="什么是空标签？"></a>什么是空标签？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HTML，SVG 和 MathML 的规范都详细定义了每个元素能包含的具体内容（define very precisely what each element can contain）。许多组合是没有任何语义含义的，比如一个 &lt;audio&gt; 元素嵌套在一个 &lt;hr&gt; 元素里。</span><br><span class="line">在 HTML 中，通常在一个空元素上使用一个闭标签是无效的。例如， &lt;input type=&quot;text&quot;&gt;&lt;/input&gt; 的闭标签是无效的 HTML。</span><br></pre></td></tr></table></figure>
-<ul>
-<li>理解： 一个没有闭标签(或者说闭标签加了无效) 或者 HTML、SVG、MathML规范中没有定义标签能包含哪些内容的标签就是 空标签。</li>
-</ul>
-<h3 id="HTML中的空标签"><a href="#HTML中的空标签" class="headerlink" title="HTML中的空标签"></a>HTML中的空标签</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;area&gt;</span><br><span class="line">&lt;base&gt;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">&lt;col&gt;</span><br><span class="line">&lt;colgroup&gt; when the span is present</span><br><span class="line">&lt;command&gt;</span><br><span class="line">&lt;embed&gt;</span><br><span class="line">&lt;hr&gt;</span><br><span class="line">&lt;img&gt;</span><br><span class="line">&lt;input&gt;</span><br><span class="line">&lt;keygen&gt;</span><br><span class="line">&lt;link&gt;</span><br><span class="line">&lt;meta&gt;</span><br><span class="line">&lt;param&gt;</span><br><span class="line">&lt;source&gt;</span><br><span class="line">&lt;track&gt;</span><br><span class="line">&lt;wbr&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="可替换标签？"><a href="#可替换标签？" class="headerlink" title="可替换标签？"></a>可替换标签？</h2><h3 id="什么是可替换标签？"><a href="#什么是可替换标签？" class="headerlink" title="什么是可替换标签？"></a>什么是可替换标签？</h3><blockquote>
-<p>可替换元素就是浏览器根据元素的标签和属性，来决定元素的具体显示内容。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">例如浏览器会根据&lt;img&gt;标签的src属性的值来读取图片信息并显示出来，而如果查看(x)html代码，则看不到图片的实际内容；又例如根据&lt;input&gt;标签的type属性来决定是显示输入框，还是单选按钮等。</span><br></pre></td></tr></table></figure>
-<h3 id="常见的几个可替换标签"><a href="#常见的几个可替换标签" class="headerlink" title="常见的几个可替换标签"></a>常见的几个可替换标签</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img&gt;、&lt;input&gt;、&lt;textarea&gt;、&lt;select&gt;、&lt;object&gt;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1803,7 +1788,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

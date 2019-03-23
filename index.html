@@ -229,6 +229,152 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/23/自己实现数组常用API/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="梁光静">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="梁光静">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/23/自己实现数组常用API/" itemprop="url">自己实现数组常用API</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-23T11:30:34+08:00">
+                2019-03-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="1-join"><a href="#1-join" class="headerlink" title="1. join"></a>1. join</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.join = function(char)&#123;</span><br><span class="line">  let result = this[0] || &apos;&apos;</span><br><span class="line">  let length = this.length</span><br><span class="line">  for(let i=1; i&lt; length; i++)&#123;</span><br><span class="line">      result += char + this[i]</span><br><span class="line">  &#125;</span><br><span class="line">  return result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-slice"><a href="#2-slice" class="headerlink" title="2. slice"></a>2. slice</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.slice = function(begin, end)&#123;</span><br><span class="line">    let result = []</span><br><span class="line">    begin = begin || 0</span><br><span class="line">    end = end || this.length</span><br><span class="line">    for(let i = begin; i&lt; end; i++)&#123;</span><br><span class="line">        result.push(this[i])</span><br><span class="line">    &#125;</span><br><span class="line">    return result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>因此可以用 slice 来将伪数组，转化成数组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">array = Array.prototye.slice.call(arrayLike)</span><br><span class="line">或者</span><br><span class="line">array = [].slice.call(arrayLike)</span><br></pre></td></tr></table></figure></p>
+<p>但是没必要，因为ES6有更好的方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array = Array.from(arrayLike)</span><br></pre></td></tr></table></figure></p>
+<p>P.S. 伪数组与真数组的区别就是：伪数组的原型链中没有 Array.prototype，而真数组的原型链中有 Array.prototype。因此伪数组没有 pop、join 等属性。</p>
+<h4 id="3-sort"><a href="#3-sort" class="headerlink" title="3. sort"></a>3. sort</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.sort = function(fn)&#123;</span><br><span class="line">    fn = fn || (a,b)=&gt; a-b</span><br><span class="line">    let roundCount = this.length - 1 // 比较的轮数</span><br><span class="line">    for(let i = 0; i &lt; roundCount; i++)&#123;</span><br><span class="line">        let minIndex = this[i]</span><br><span class="line">        for(let k = i+1; k &lt; this.length; k++)&#123;</span><br><span class="line">            if( fn.call(null, this[k],this[i]) &lt; 0 )&#123;</span><br><span class="line">                [ this[i], this[k] ] = [ this[k], this[i] ]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4-forEach"><a href="#4-forEach" class="headerlink" title="4. forEach"></a>4. forEach</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.forEach = function(fn)&#123;</span><br><span class="line">    for(let i=0;i&lt;this.length; i++)&#123;</span><br><span class="line">        if(i in this)&#123;</span><br><span class="line">            fn.call(undefined, this[i], i, this)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>forEach 和 for 的区别主要有两个：</p>
+<ul>
+<li>1.forEach 没法 break</li>
+<li>2.forEach 用到了函数，所以每次迭代都会有一个新的函数作用域；而 for 循环只有一个作用域（著名前端面试题就是考察了这个）<h4 id="5-map"><a href="#5-map" class="headerlink" title="5. map"></a>5. map</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.map = function(fn)&#123;</span><br><span class="line">    let result = []</span><br><span class="line">    for(let i=0;i&lt;this.length; i++)&#123;</span><br><span class="line">        if(i in this) &#123;</span><br><span class="line">            result[i] = fn.call(undefined, this[i], i, this)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>map和forEach的区别就是map有返回值而forEach没有</p>
+<h4 id="6-filter"><a href="#6-filter" class="headerlink" title="6. filter"></a>6. filter</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.filter = function(fn)&#123;</span><br><span class="line">    let result = []</span><br><span class="line">    let temp</span><br><span class="line">    for(let i=0;i&lt;this.length; i++)&#123;</span><br><span class="line">        if(i in this) &#123;</span><br><span class="line">            if(temp = fn.call(undefined, this[i], i, this) )&#123;  // fn.call() 返回真值就 push 到返回值，没返回真值就不 push。</span><br><span class="line">                result.push(this[i])</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="7-reduce"><a href="#7-reduce" class="headerlink" title="7. reduce"></a>7. reduce</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.reduce = function(fn, init)&#123;</span><br><span class="line">    let result = init</span><br><span class="line">    for(let i=0;i&lt;this.length; i++)&#123;</span><br><span class="line">        if(i in this) &#123;</span><br><span class="line">            result = fn.call(undefined, result, this[i], i, this)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><ol>
+<li>reduce 实现 map<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">array2 = array.map( (v) =&gt; v+1 )</span><br><span class="line">可以写成 </span><br><span class="line">array2 = array.reduce( (result, v)=&gt; &#123;</span><br><span class="line">    result.push(v + 1)</span><br><span class="line">    return result</span><br><span class="line">&#125;, [ ] )</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>reduce 实现 filter<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">array2 = array.filter( (v) =&gt; v % 2 === 0 )</span><br><span class="line">可以写成</span><br><span class="line">array2 = array.reduce( (result, v)=&gt; &#123;</span><br><span class="line">    if(v % 2 === 0)&#123; result.push(v) &#125;</span><br><span class="line">    return result</span><br><span class="line">&#125;, [])</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/07/JS实现各种选择算法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1495,152 +1641,6 @@ export default {
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/31/cookie、session、localStorage入门/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="梁光静">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="梁光静">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/31/cookie、session、localStorage入门/" itemprop="url">cookie、 session、localStorage入门</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-31T00:37:08+08:00">
-                2018-08-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="1-cookie和session的区别"><a href="#1-cookie和session的区别" class="headerlink" title="1. cookie和session的区别"></a>1. cookie和session的区别</h1><ul>
-<li>一般来说，Session 基于 Cookie 来实现。<h3 id="1-cookie"><a href="#1-cookie" class="headerlink" title="1. cookie"></a>1. cookie</h3></li>
-</ul>
-<ol>
-<li>服务器通过 Set-Cookie 头给客户端一串字符串</li>
-<li>客户端每次访问相同域名的网页时，必须带上这段字符串</li>
-<li>客户端要在一段时间内保存这个Cookie</li>
-<li>Cookie 默认在用户关闭页面后就失效，后台代码可以任意设置 Cookie 的过期时间</li>
-<li>大小大概在 4kb 以内<h3 id="2-session"><a href="#2-session" class="headerlink" title="2. session"></a>2. session</h3></li>
-<li>将 SessionID（随机数）通过 Cookie 发给客户端</li>
-<li>客户端访问服务器时，服务器读取 SessionID</li>
-<li>服务器有一块内存（哈希表）保存了所有 session</li>
-<li>通过 SessionID 我们可以得到对应用户的隐私信息，如 id、email</li>
-<li>这块内存（哈希表）就是服务器上的所有 session<h1 id="2-localStorage"><a href="#2-localStorage" class="headerlink" title="2. localStorage"></a>2. localStorage</h1></li>
-<li>LocalStorage 跟 HTTP 无关</li>
-<li>HTTP 不会带上 LocalStorage 的值</li>
-<li>只有相同域名的页面才能互相读取 LocalStorage（没有同源那么严格）</li>
-<li>每个域名 localStorage 最大存储量为 5Mb 左右（每个浏览器不一样）</li>
-<li>常用场景：记录有没有提示过用户（没有用的信息，不能记录密码）</li>
-<li>LocalStorage 永久有效，除非用户清理缓存<h1 id="3-SessionStorage（会话存储）"><a href="#3-SessionStorage（会话存储）" class="headerlink" title="3. SessionStorage（会话存储）"></a>3. SessionStorage（会话存储）</h1></li>
-</ol>
-<ul>
-<li>1、2、3、4 同上</li>
-</ul>
-<ol start="5">
-<li>SessionStorage 在用户关闭页面（会话结束）后就失效。</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1691,7 +1691,7 @@ export default {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
